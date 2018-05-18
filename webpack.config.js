@@ -7,9 +7,11 @@ const AUTOPREFIXER = require('autoprefixer'),
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-    entry: './src/js/app.js',
+    entry: {
+		index: './src/js/index.js'
+	},
     output: {
-		filename: 'bundle.js'
+		filename: '[name]-bundle.js'
 		// path: PATH.resolve(__dirname, 'dist')
 	},
 	devtool: isDevelopment && 'source-map',
@@ -97,6 +99,7 @@ module.exports = {
         new HTML_WEBPACK_PLUGIN({
             title: 'Code Our Dreams',
 			template: './src/templates/index.pug',
+			chunks: ['index'],
 			minify: !isDevelopment && {
 				html5: true,
 				collapseWhitespace: true,
