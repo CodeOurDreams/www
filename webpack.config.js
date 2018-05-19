@@ -67,8 +67,9 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							// name: '[name].[ext]',
-							useRelativePath: true,
+							name: '[name].[hash].[ext]',
+							outputPath: '/',
+							useRelativePath: true
 						}
 					},
 					{
@@ -78,7 +79,6 @@ module.exports = {
 								progressive: true,
 								quality: 65
 							},
-							// optipng.enabled: false will disable optipng
 							optipng: {
 								enabled: true,
 							},
@@ -89,7 +89,6 @@ module.exports = {
 							gifsicle: {
 								interlaced: false,
 							},
-							// the webp option will enable WEBP
 							webp: {
 								quality: 75
 							}
