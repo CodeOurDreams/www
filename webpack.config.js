@@ -1,8 +1,9 @@
 const AUTOPREFIXER = require('autoprefixer'),
-	  HTML_WEBPACK_PLUGIN = require('html-webpack-plugin'),
-	  MINI_CSS_EXTRACT_PLUGIN = require('mini-css-extract-plugin'),
-	  PATH = require('path'),
-	  WEBPACK = require('webpack');
+			HTML_WEBPACK_PLUGIN = require('html-webpack-plugin'),
+			MINI_CSS_EXTRACT_PLUGIN = require('mini-css-extract-plugin'),
+			MODERNIZR_WEBPACK_PLUGIN = require('modernizr-webpack-plugin'),
+			PATH = require('path'),
+			WEBPACK = require('webpack');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -21,10 +22,21 @@ module.exports = {
 	},
 	module: {
 		rules: [
+			{
+				test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				use: [{
+					loader: 'url-loader',
+					options: {
+						limit: 10000,
+						mimetype: 'application/font-woff'
+					}
+				}
+			]},
+			{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader' },
 			{ test: /\.pug$/, loader: 'pug-loader' },
 			{
-                test: /\.(scss|css)$/,
-                use: [
+				test: /\.(scss|css)$/,
+				use: [
 					MINI_CSS_EXTRACT_PLUGIN.loader,
 					{
 						loader: 'css-loader',
@@ -50,13 +62,12 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(jpg|png|gif)$/,
+				test: /\.(gif|png|jpe?g|svg)$/i,
 				use: [
 					{
 						loader: 'file-loader',
 						options: {
-							name: '[name].[ext]',
-							outputPath: 'static/',
+							// name: '[name].[ext]',
 							useRelativePath: true,
 						}
 					},
@@ -67,37 +78,47 @@ module.exports = {
 								progressive: true,
 								quality: 65
 							},
+							// optipng.enabled: false will disable optipng
 							optipng: {
-								enabled: true
+								enabled: true,
 							},
 							pngquant: {
 								quality: '65-90',
-								speed: 4
+								speed: 1
 							},
 							gifsicle: {
-								interlaced: false
+								interlaced: false,
 							},
+							// the webp option will enable WEBP
 							webp: {
 								quality: 75
 							}
 						}
-					}
-				]
+					},
+				],
 			}
 		],
 	},
-    plugins: [
-        new WEBPACK.LoaderOptionsPlugin({
-            options: {
-              pugLoader: {}
-            }
+	plugins: [
+		new MODERNIZR_WEBPACK_PLUGIN(),
+		new WEBPACK.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery',
+			'window.$': 'jquery',
+			'window.jQuery': 'jquery'
+		}),
+		// new WEBPACK.optimize.CommonsChunkPlugin('vendors', 'vendors.js', Infinity),
+		new WEBPACK.LoaderOptionsPlugin({
+			options: {
+				pugLoader: {}
+			}
 		}),
 		new MINI_CSS_EXTRACT_PLUGIN({
 			filename: '[name]-styles.css',
 			chunkFilename: '[id].css'
 		}),
-        new HTML_WEBPACK_PLUGIN({
-            title: 'Code Our Dreams',
+		new HTML_WEBPACK_PLUGIN({
+			title: 'Code Our Dreams',
 			template: './src/templates/index.pug',
 			chunks: ['index'],
 			minify: !isDevelopment && {
