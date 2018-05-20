@@ -7,3 +7,6 @@ import '../styles/app.scss';
 // window.$ = $;
 import './plugins.js';
 import './main.js';
+
+
+const temp = 'test';

@@ -3,7 +3,9 @@ const AUTOPREFIXER = require('autoprefixer'),
 			MINI_CSS_EXTRACT_PLUGIN = require('mini-css-extract-plugin'),
 			MODERNIZR_WEBPACK_PLUGIN = require('modernizr-webpack-plugin'),
 			PATH = require('path'),
-			WEBPACK = require('webpack');
+      WEBPACK = require('webpack');
+      
+const something = require('./src/js/english');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -117,7 +119,8 @@ module.exports = {
 			chunkFilename: '[id].css'
 		}),
 		new HTML_WEBPACK_PLUGIN({
-			title: 'Code Our Dreams',
+      title: 'Code Our Dreams',
+      english: something.test,
 			template: './src/templates/index.pug',
 			chunks: ['index'],
 			minify: !isDevelopment && {

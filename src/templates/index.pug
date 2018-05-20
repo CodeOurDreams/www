@@ -1,3 +1,5 @@
+- var test = 'something'
+
 doctype html
 head
 	meta(charset='utf-8')
@@ -13,37 +15,37 @@ body
 			.row
 				.col-md-12
 					.text-content
-						h2 Welcome To Ziggy
+						h2 #{htmlWebpackPlugin.options.title}
 						.line-dec
-						span This is clean & professional html template
+						span #{htmlWebpackPlugin.options.english}
 	section.second-section
 		.container
 			.row
 				.col-md-3.col-sm-6
 					.service-item
 						.icon
-							img(src='img/first-icon.png', alt='')
+							img(src='src/static/img/first-icon.png', alt='')
 						h4 Quick Editing
 						p
 							| Aliquam ex velit, viverra eu tristique vel, rhoncus nec ligula. In vel massa sed dolor pharetra interdum vitae posuere.
 				.col-md-3.col-sm-6
 					.service-item
 						.icon
-							img(src='img/second-icon.png', alt='')
+							img(src='src/static/img/second-icon.png', alt='')
 						h4 Responsive Layout
 						p
 							| Sed pulvinar ipsum id leo volutpat, in convallis lectus molestie. Aliquam nisi sapien, faucibus eu consequat id, egestas vitae augue.
 				.col-md-3.col-sm-6
 					.service-item
 						.icon
-							img(src='img/third-icon.png', alt='')
+							img(src='src/static/img/third-icon.png', alt='')
 						h4 Quick Support
 						p
 							| Aliquam ex velit, viverra eu tristique vel, rhoncus nec ligula. In vel massa sed dolor pharetra interdum vitae posuere.
 				.col-md-3.col-sm-6
 					.service-item
 						.icon
-							img(src='img/fourth-icon.png', alt='')
+							img(src='src/static/img/fourth-icon.png', alt='')
 						h4 Voice Chat
 						p
 							| Sed pulvinar ipsum id leo volutpat, in convallis lectus molestie. Aliquam nisi sapien, faucibus eu consequat id, egestas vitae augue.
@@ -52,7 +54,7 @@ body
 			.row
 				.col-md-10.col-md-offset-1
 					.left-image.col-md-4
-						img(src='img/left-image.png', alt='')
+						img(src='src/static/img/left-image.png', alt='')
 					.right-text.col-md-8
 						h4
 							em Integer suscipit
@@ -66,24 +68,24 @@ body
 				.col-md-3.col-sm-6
 					.portfolio-item.first-item
 						.image
-							a(href='img/01-big-item.jpg', data-lightbox='image-1')
-								img(src='img/first-item.jpg')
+							a(href='src/static/img/01-big-item.jpg', data-lightbox='image-1')
+								img(src='src/static/img/first-item.jpg')
 						.text
 							span Nature
 							h4 Robotic Light
 				.col-md-3.col-sm-6
 					.portfolio-item.second-item
 						.image
-							a(href='img/02-big-item.jpg', data-lightbox='image-1')
-								img(src='img/second-item.jpg')
+							a(href='src/static/img/02-big-item.jpg', data-lightbox='image-1')
+								img(src='src/static/img/second-item.jpg')
 						.text
 							span Architect
 							h4 Rock Solid
 				.col-md-3.col-sm-6
 					.portfolio-item.third-item
 						.image
-							a(href='img/03-big-item.jpg', data-lightbox='image-1')
-								img(src='img/third-item.jpg')
+							a(href='src/static/img/03-big-item.jpg', data-lightbox='image-1')
+								img(src='src/static/img/third-item.jpg')
 						.text
 							span Focus
 							h4 Clean Design
@@ -104,7 +106,7 @@ body
 						p
 							| Mauris eget orci porta, aliquam neque sit amet, porttitor dui. Donec efficitur vehicula justo quis varius. Vivamus pharetra lorem eget turpis ornare tempus. Vivamus ac sodales lectus. Morbi rhoncus feugiat neque ultrices rhoncus. Maecenas ultrices, nisl pellentesque hendrerit dignissim, ante purus hendrerit urna, eu tristique est massa quis risus.
 					.right-image.col-md-4
-						img(src='img/right-image.png', alt='')
+						img(src='src/static/img/right-image.png', alt='')
 	section.sixth-section
 		.container
 			.row
