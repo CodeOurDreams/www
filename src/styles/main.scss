@@ -34,7 +34,7 @@ p {
 =======================*/
 
 .first-section {
-	background-image: url('/src/static/img/first-section-bg.png');
+	background-image: url('../static/img/first-section-bg.png');
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
@@ -98,7 +98,7 @@ p {
 =======================*/
 
 .third-section {
-	background-image: url(/src/static/img/third-section-bg.png);
+	background-image: url(../static/img/third-section-bg.png);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
@@ -141,7 +141,7 @@ p {
 =======================*/
 
 .fourth-section {
-	background-image: url(/src/static/img/fourth-section-bg.png);
+	background-image: url(../static/img/fourth-section-bg.png);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
@@ -214,39 +214,39 @@ p {
 
 
 /* ======================
------ FIVTH SECTION------
+----- FIFTH SECTION------
 =======================*/
 
-.fivth-section {
-	background-image: url(/src/static/img/fivth-section-bg.png);
+.fifth-section {
+	background-image: url(../static/img/fifth-section-bg.png);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
 	padding: 20% 0px;
 }
 
-.fivth-section .right-image {
+.fifth-section .right-image {
 	display: inline;
 }
 
-.fivth-section .right-image img {
+.fifth-section .right-image img {
 	max-width: 100%;
 	overflow: hidden;
 	text-align: center;
 }
 
-.fivth-section .left-text {
+.fifth-section .left-text {
 	display: inline;
 	text-align: right;
 }
 
-.fivth-section em {
+.fifth-section em {
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 300;
 }
 
-.fivth-section h4 {
+.fifth-section h4 {
 	margin-top: 60px;
 	color: #fff;
 	font-size: 24px;
@@ -255,7 +255,7 @@ p {
 	letter-spacing: 1px;
 }
 
-.fivth-section p {
+.fifth-section p {
 	color: #fff;
 	margin-top: 15px;
 }
@@ -266,7 +266,7 @@ p {
 =======================*/
 
 .sixth-section {
-	background-image: url(/src/static/img/sixth-section-bg.png);
+	background-image: url(../static/img/sixth-section-bg.png);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
@@ -362,7 +362,7 @@ p {
 
 footer {
 	text-align: center;
-	background-image: url(/src/static/img/footer-bg.png);
+	background-image: url(../static/img/footer-bg.png);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
@@ -425,7 +425,7 @@ footer a:hover {
 ======================*/
 
 .first-gallery-section {
-	background-image: url(/src/static/img/heading-bg.png);
+	background-image: url(../static/img/heading-bg.png);
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
@@ -600,15 +600,15 @@ footer a:hover {
 		width: 50%;
 	}
 
-	.fivth-section {
+	.fifth-section {
 		text-align: center;
 	}
 
-	.fivth-section .left-text {
+	.fifth-section .left-text {
 		text-align: left;
 	}
 
-	.fivth-section .right-image img {
+	.fifth-section .right-image img {
 		margin-top: 30px;
 		width: 50%;
 	}
@@ -678,12 +678,12 @@ footer a:hover {
 		padding:  46% 0px;
 	}
 
-	.fivth-section {
+	.fifth-section {
 		text-align: center;
 		padding: 50px 0px 250px 0px;
 	}
 
-	.fivth-section .left-text {
+	.fifth-section .left-text {
 		text-align: left;
 		margin-bottom: 30px;
 		display: inline-block;
@@ -717,11 +717,11 @@ footer a:hover {
 		width: 80%;
 	}
 
-	.fivth-section {
+	.fifth-section {
 		text-align: center;
 	}
 
-	.fivth-section .right-image img {
+	.fifth-section .right-image img {
 		width: 80%;
 	}
 	
@@ -733,7 +733,7 @@ footer a:hover {
 
 /* Preload images */
 body:after {
-  content: url(/src/static/img/close.png) url(/src/static/img/loading.gif) url(/src/static/img/prev.png) url(/src/static/img/next.png);
+  content: url(../static/img/close.png) url(../static/img/loading.gif) url(../static/img/prev.png) url(../static/img/next.png);
   display: none;
 }
 
@@ -812,7 +812,7 @@ body.lb-disable-scrolling {
   width: 32px;
   height: 32px;
   margin: 0 auto;
-  background: url(/src/static/img/loading.gif) no-repeat;
+  background: url(../static/img/loading.gif) no-repeat;
 }
 
 .lb-nav {
@@ -843,7 +843,7 @@ body.lb-disable-scrolling {
   width: 34%;
   left: 0;
   float: left;
-  background: url(/src/static/img/prev.png) left 48% no-repeat;
+  background: url(../static/img/prev.png) left 48% no-repeat;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -webkit-transition: opacity 0.6s;
@@ -861,7 +861,7 @@ body.lb-disable-scrolling {
   width: 64%;
   right: 0;
   float: right;
-  background: url(/src/static/img/next.png) right 48% no-repeat;
+  background: url(../static/img/next.png) right 48% no-repeat;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -webkit-transition: opacity 0.6s;
@@ -929,7 +929,7 @@ body.lb-disable-scrolling {
   float: right;
   width: 30px;
   height: 30px;
-  background: url(/src/static/img/close.png) top right no-repeat;
+  background: url(../static/img/close.png) top right no-repeat;
   text-align: right;
   outline: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);

@@ -5,7 +5,7 @@ const AUTOPREFIXER = require('autoprefixer'),
 			PATH = require('path'),
       WEBPACK = require('webpack');
       
-const something = require('./src/js/english');
+const ENGLISH = require('./src/languages/english');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -16,7 +16,8 @@ module.exports = {
     output: {
 		filename: '[name]-bundle.js'
 		// path: PATH.resolve(__dirname, 'dist')
-	},
+  },
+  mode: isDevelopment ? 'production' : 'development',
 	devtool: isDevelopment && 'source-map',
 	devServer: {
 		port: 3000,
@@ -24,6 +25,7 @@ module.exports = {
 	},
 	module: {
 		rules: [
+      { test: /\.ts$/, use: 'ts-loader' },
 			{
 				test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 				use: [{
@@ -67,35 +69,35 @@ module.exports = {
 				test: /\.(gif|png|jpe?g|svg)$/i,
 				use: [
 					{
-						loader: 'file-loader',
+						loader: 'url-loader',
 						options: {
 							name: '[name].[hash].[ext]',
-							outputPath: '/',
+							limit: 8000,
 							useRelativePath: true
 						}
-					},
-					{
-						loader: 'image-webpack-loader',
-						options: {
-							mozjpeg: {
-								progressive: true,
-								quality: 65
-							},
-							optipng: {
-								enabled: true,
-							},
-							pngquant: {
-								quality: '65-90',
-								speed: 1
-							},
-							gifsicle: {
-								interlaced: false,
-							},
-							webp: {
-								quality: 75
-							}
-						}
-					},
+					// },
+					// {
+					// 	loader: 'image-webpack-loader',
+					// 	options: {
+					// 		mozjpeg: {
+					// 			progressive: true,
+					// 			quality: 65
+					// 		},
+					// 		optipng: {
+					// 			enabled: true,
+					// 		},
+					// 		pngquant: {
+					// 			quality: '65-90',
+					// 			speed: 1
+					// 		},
+					// 		gifsicle: {
+					// 			interlaced: false,
+					// 		},
+					// 		webp: {
+					// 			quality: 75
+					// 		}
+					// 	}
+					}
 				],
 			}
 		],
@@ -119,8 +121,7 @@ module.exports = {
 			chunkFilename: '[id].css'
 		}),
 		new HTML_WEBPACK_PLUGIN({
-      title: 'Code Our Dreams',
-      english: something.test,
+			english: ENGLISH,
 			template: './src/templates/index.pug',
 			chunks: ['index'],
 			minify: !isDevelopment && {
