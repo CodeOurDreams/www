@@ -2,10 +2,12 @@ import './app.js';
 
 // Images
 // Second Section
-import imgFirstIcon from '../static/img/first-icon.png';
-import imgSecondIcon from '../static/img/second-icon.png';
-import imgThirdIcon from '../static/img/third-icon.png';
-import imgFourthIcon from '../static/img/fourth-icon.png';
+import imgValue0 from '../static/img/first-icon.png';
+import imgValue1 from '../static/img/second-icon.png';
+import imgValue2 from '../static/img/third-icon.png';
+import imgValue3 from '../static/img/fourth-icon.png';
+import imgValue4 from '../static/img/third-icon.png';
+import imgValue5 from '../static/img/first-icon.png';
 
 // Third Section
 import imgLeftImage from '../static/img/left-image.png'
@@ -22,10 +24,13 @@ import imgBigPerson2 from '../static/img/03-big-item.jpg';
 import imgRightImage from '../static/img/right-image.png'
 
 // Second Section
-document.getElementById('value0').src = imgFirstIcon;
-document.getElementById('value1').src = imgSecondIcon;
-document.getElementById('value2').src = imgThirdIcon;
-document.getElementById('value3').src = imgFourthIcon;
+
+document.getElementById('value0').src = imgValue0;
+document.getElementById('value1').src = imgValue1;
+document.getElementById('value2').src = imgValue2;
+document.getElementById('value3').src = imgValue3;
+document.getElementById('value4').src = imgValue4;
+document.getElementById('value5').src = imgValue5;
 
 // Third Section
 document.getElementById('missionImg').src = imgLeftImage;
