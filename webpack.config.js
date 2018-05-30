@@ -14,7 +14,8 @@ module.exports = {
 		index: './src/javascript/index.js'
 	},
   output: {
-		filename: '[name]-bundle.js'
+		filename: '[name].js',
+		chunkFilename: '[name].[hash].js'
 		// path: PATH.resolve(__dirname, 'dist')
   },
   mode: isDevelopment ? 'production' : 'development',
@@ -25,6 +26,10 @@ module.exports = {
 	},
 	module: {
 		rules: [
+			{
+				test: /\.node$/,
+				use: 'node-loader'
+			},
       // { test: /\.ts$/, use: 'ts-loader' },
 			{
 				test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -117,8 +122,8 @@ module.exports = {
 			}
 		}),
 		new MINI_CSS_EXTRACT_PLUGIN({
-			filename: '[name]-styles.css',
-			chunkFilename: '[id].css'
+			filename: '[name].css',
+			chunkFilename: '[id].[hash].css'
 		}),
 		new HTML_WEBPACK_PLUGIN({
 			english: ENGLISH,
@@ -132,5 +137,8 @@ module.exports = {
 				removeEmptyElements: true
 			},
 		})
-	]
+	],
+	optimization: {
+		minimize: !isDevelopment
+	}
 };
