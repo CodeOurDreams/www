@@ -1,20 +1,19 @@
 const AUTOPREFIXER = require('autoprefixer'),
-			HTML_WEBPACK_PLUGIN = require('html-webpack-plugin'),
-			MINI_CSS_EXTRACT_PLUGIN = require('mini-css-extract-plugin'),
-			MODERNIZR_WEBPACK_PLUGIN = require('modernizr-webpack-plugin'),
-			PATH = require('path'),
+      HTML_WEBPACK_PLUGIN = require('html-webpack-plugin'),
+      MINI_CSS_EXTRACT_PLUGIN = require('mini-css-extract-plugin'),
+      MODERNIZR_WEBPACK_PLUGIN = require('modernizr-webpack-plugin'),
+      PATH = require('path'),
       WEBPACK = require('webpack');
-      
-const ENGLISH = require('./src/languages/english');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-    entry: {
-		index: './src/js/index.js'
+  entry: {
+		index: './src/javascript/index.js'
 	},
-    output: {
-		filename: '[name]-bundle.js'
+  output: {
+		filename: '[name].js',
+		chunkFilename: '[name].[hash].js'
 		// path: PATH.resolve(__dirname, 'dist')
   },
   mode: isDevelopment ? 'production' : 'development',
@@ -25,7 +24,7 @@ module.exports = {
 	},
 	module: {
 		rules: [
-      { test: /\.ts$/, use: 'ts-loader' },
+      // { test: /\.ts$/, use: 'ts-loader' },
 			{
 				test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 				use: [{
@@ -37,7 +36,6 @@ module.exports = {
 				}
 			]},
 			{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader' },
-			{ test: /\.pug$/, loader: 'pug-loader' },
 			{
 				test: /\.(scss|css)$/,
 				use: [
@@ -75,31 +73,10 @@ module.exports = {
 							limit: 8000,
 							useRelativePath: true
 						}
-					// },
-					// {
-					// 	loader: 'image-webpack-loader',
-					// 	options: {
-					// 		mozjpeg: {
-					// 			progressive: true,
-					// 			quality: 65
-					// 		},
-					// 		optipng: {
-					// 			enabled: true,
-					// 		},
-					// 		pngquant: {
-					// 			quality: '65-90',
-					// 			speed: 1
-					// 		},
-					// 		gifsicle: {
-					// 			interlaced: false,
-					// 		},
-					// 		webp: {
-					// 			quality: 75
-					// 		}
-					// 	}
 					}
-				],
-			}
+				]
+			},
+			{ test: /\.pug$/, loader: 'pug-loader' }
 		],
 	},
 	plugins: [
@@ -117,11 +94,12 @@ module.exports = {
 			}
 		}),
 		new MINI_CSS_EXTRACT_PLUGIN({
-			filename: '[name]-styles.css',
-			chunkFilename: '[id].css'
+			filename: '[name].css',
+			chunkFilename: '[id].[hash].css'
 		}),
 		new HTML_WEBPACK_PLUGIN({
-			english: ENGLISH,
+			language: require('./src/languages/english'),
+			utils: require('./src/javascript/pugUtils'),
 			template: './src/templates/index.pug',
 			chunks: ['index'],
 			minify: !isDevelopment && {
@@ -132,5 +110,8 @@ module.exports = {
 				removeEmptyElements: true
 			},
 		})
-	]
+	],
+	optimization: {
+		minimize: !isDevelopment
+	}
 };

@@ -1,123 +1,186 @@
-- var test = 'something'
+- var utils = htmlWebpackPlugin.options.utils;
+- var lang = htmlWebpackPlugin.options.language;
+
+mixin arrow
+  svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='36px' height='18px' viewBox='0 0 36 18' zoomAndPan='disable' preserveAspectRatio='none')
+    style(type='text/css')
+      <![CDATA[ line { stroke: #fff; stroke-width: 1; } ]]>
+    line(x1='0' y1='0' x2='18' y2='18')
+    line(x1='36' y1='0' x2='18' y2='18')
+
 
 doctype html
 head
-	meta(charset='utf-8')
-	meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-	title #{htmlWebpackPlugin.options.english.orgName}
-	meta(name='description', content='Code Our Dreams is dedicated to teaching students computer science, so that they may be equipped to build applications that drive positive change in our communities.')
-	meta(name='viewport', content='width=device-width, initial-scale=1')
-	//- link(rel='apple-touch-icon', href='apple-touch-icon.png')
-
+  title= lang.orgName
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  //- <!--[if lte IE 8]>
+  //- <script src="assets/js/ie/html5shiv.js"></script>
+  //- <![endif]-->
+  //- link(rel='stylesheet' href='assets/css/main.css')
+  //- <!--[if lte IE 9]>
+  //- <link rel="stylesheet" href="assets/css/ie9.css" />
+  //- <![endif]-->
+  //- <!--[if lte IE 8]>
+  //- <link rel="stylesheet" href="assets/css/ie8.css" />
+  //- <![endif]-->
 body
-	section.first-section
-		.container
-			.row
-				.col-md-12
-					.text-content
-						h2 #{ htmlWebpackPlugin.options.english.orgName }
-						.line-dec
-						span #{ htmlWebpackPlugin.options.english.subtitle }
-	section.second-section
-		.container
-			.row
-				each value, index in htmlWebpackPlugin.options.english.values
-					.col-md-3.col-sm-6
-						.service-item
-							.icon
-								img(id='value'+index, alt=value.alt)
-								h4 #{ value.title }
-								p #{ value.detail }
-	section.third-section
-		.container
-			.row
-				.col-md-10.col-md-offset-1
-					.left-image.col-md-4
-						img#missionImg(alt=htmlWebpackPlugin.options.english.missionImgAlt)
-					.right-text.col-md-8
-						h4
-							em #{ htmlWebpackPlugin.options.english.missionSuperTitle }
-							br
-							| #{ htmlWebpackPlugin.options.english.missionTitle }
-						p #{ htmlWebpackPlugin.options.english.missionBody }
-	section.fourth-section
-		.container
-			.row
-				each person, index in htmlWebpackPlugin.options.english.people
-					.col-md-3.col-sm-6
-						.portfolio-item.first-item
-							.image
-								a(id='bigPerson'+index, data-lightbox='image-'+index)
-									img(id='imgPerson'+index)
-							.text
-								h4 #{ person.name }
-								span #{ person.title}
-				//- .col-md-3.col-sm-6
-				//- 	.send-to-portfolio
-				//- 		span Do you want to see more?
-				//- 		.primary-button
-				//- 			a(href='portfolio-page.html') Visit gallery
-	section.fifth-section
-		.container
-			.row
-				.col-md-10.col-md-offset-1
-					.left-text.col-md-8
-						h4
-							em #{ htmlWebpackPlugin.options.english.programSuperTitle }
-							br
-							| #{ htmlWebpackPlugin.options.english.programTitle }
-						p #{ htmlWebpackPlugin.options.english.programBody }
-						.right-image.col-md-4
-						img#programImg(alt=htmlWebpackPlugin.options.english.programImgAlt)
-	section.sixth-section
-		.container
-			.row
-				.col-md-6
-					.row
-						form#contact(action='', method='post')
-							.col-md-6
-								fieldset
-									input#name.form-control(name='name', type='text', placeholder=htmlWebpackPlugin.options.english.yourName required)
-							.col-md-6
-								fieldset
-									input#email.form-control(name='email', type='email', placeholder=htmlWebpackPlugin.options.english.yourEmail, required)
-							.col-md-12
-								fieldset
-									textarea#message.form-control(name='message', rows='6', placeholder=htmlWebpackPlugin.options.english.yourMessage, required='')
-							.col-md-12
-								fieldset
-									button#form-submit.btn(type='submit') #{ htmlWebpackPlugin.options.english.sendMessage }
-				.col-md-5
-					.right-info
-						ul
-							li
-								a(href='#')
-									i.fa.fa-envelope 
-									| #{ htmlWebpackPlugin.options.english.email }
-							li
-								a(href='#')
-									i.fa.fa-phone
-									| #{ htmlWebpackPlugin.options.english.phone }
-							li
-								a(href='#')
-									i.fa.fa-map-marker
-									| #{ htmlWebpackPlugin.options.english.address }
-	footer
-		.container
-			.row
-				.col-md-12
-					ul
-						li
-							a(href='https://www.facebook.com/CodeOurDreams')
-								i.fa.fa-facebook
-						li
-							a(href='https://twitter.com/CodeOurDreams')
-								i.fa.fa-twitter
-						li
-							a(href='https://www.instagram.com/CodeOurDreams')
-								i.fa.fa-instagram
-					p Copyright © 2018 Code Our Dreams. All Rights Reserved. 
-						|  | Made with 
-						i.fa.fa-heart.heart
-						|  by 
-						a(href='http://www.seliglabs.com') Selig Labs
+  //- Header
+  header#header
+    h1#logo
+      a(href='/')= utils.toTitleCase(lang.orgName)
+    nav#nav
+      ul
+        each navItem in lang.nav
+          li
+            a(class=(navItem.button ? 'button' + (navItem.specialBtn ? ' special' : '') : '') href=navItem.ref)= navItem.label
+        //- li
+        //-   a(href='#') Layouts
+        //-   ul
+        //-     li
+        //-       a(href='left-sidebar.html') Left Sidebar
+        //-     li
+        //-       a(href='#') Submenu
+        //-       ul
+        //-         li
+        //-           a(href='#') Option 1
+
+  //- Home
+  section#home
+    .content
+      header
+        h2= utils.toTitleCase(lang.orgName)
+        p
+          | #{ lang.home.subtitle1.toLowerCase() }
+          br
+          | &nbsp;#{ lang.home.subtitle2.toLowerCase() }
+    +arrow
+    a.goto-next.scrolly(href='#mission') Next
+
+  //- Mission
+  section#mission.spotlight.style1.bottom
+    span.image.fit.main
+      img#imgMission(alt='')
+    .content
+      .container
+        h2= lang.mission
+    a.goto-next.scrolly(href='#values') Next
+
+  //- Values
+  section#values.spotlight.style2.right
+    span.image.fit.main
+      img#imgValues(alt='')
+    .content
+      header
+        h2= utils.toTitleCase(lang.values.title)
+      each value in lang.values.values
+        .row
+          .4u(class='12u$(small)')
+            span.icon.alt.major(class='fas fa-' + value.icon)
+          .8u(class='12u$(small)')
+            h3= value.label
+            h6= value.description
+      ul.actions
+        li
+          a.button(href='#values') Learn More
+    a.goto-next.scrolly(href='#three') Next
+    
+  //- Get Involved
+  section#getInvolved.spotlight.style3.left
+    span.image.fit.main.bottom
+      img#imgGetInvolved(alt='')
+    .content
+      header
+        h2= utils.toTitleCase(lang.getInvolved.title)
+        p= lang.getInvolved.subtitle
+      p= lang.getInvolved.body
+      ul.actions
+        each action in lang.getInvolved.actions
+          li
+            a.button(class=(action.specialBtn ? ' special' : '') href=action.ref)= action.label
+          br
+          br
+    a.goto-next.scrolly(href='#about') Next
+
+  //- About
+  section#about.wrapper.style1.special.fade-up
+    .container
+      header.major
+        h2= lang.about.title
+        p= lang.about.subtitle
+      .box.alt
+        .row.uniform
+          each person in lang.about.people
+            section.4u(class='6u$(medium) 12u$(xsmall)')
+              span.icon.alt.major.fa-user
+              h3= person.name
+              p= person.title
+      footer.major
+        ul.actions
+          li
+            a.button(href='#') Magna sed feugiat
+
+  // Five
+  section#contact.wrapper.style2.special.fade
+    .container
+      header
+        h2= lang.contact.title
+        p= lang.contact.subtitle
+      h3= lang.contact.mailingList.title
+      form.container(method='post' action='#' class='50%')
+        .row.uniform(class='50%')
+          .8u(class='12u$(xsmall)')
+            input#email(type='email' name='email' placeholder= lang.contact.mailingList.placeholder)
+          .4u(class='12u$(xsmall)')
+            input.fit.special(type='submit' value= lang.contact.mailingList.button)
+      hr
+      h3= lang.contact.message.title
+      form.container(method='post' action='#' class='75%')
+        .row.uniform
+          .6u(class='12u$(xsmall)')
+            input#name(type='text' name='name' placeholder= lang.contact.message.name)
+          .6u(class='12u$(xsmall)')
+            input#email(type='email' name='email' placeholder= lang.contact.message.email)
+          .12u
+            textarea#message(name='message' rows='5' placeholder= lang.contact.message.message)
+          .12u
+            input.fit.special(type='submit' value= lang.contact.message.button)
+
+  //- Footer
+  footer#footer
+    ul.icons
+      li
+        a.icon.alt(href='https://twitter.com/CodeOurDreams' target='_blank')
+          i.fab.fa-twitter
+          span.label Twitter
+      li
+        a.icon.alt(href='https://www.facebook.com/CodeOurDreams' target='_blank')
+          i.fab.fa-facebook
+          span.label Facebook
+      li
+        a.icon.alt(href='https://www.linkedin.com/company/codeourdreams' target='_blank')
+          i.fab.fa-linkedin
+          span.label LinkedIn
+      li
+        a.icon.alt(href='https://www.instagram.com/CodeOurDreams/' target='_blank')
+          i.fab.fa-instagram
+          span.label Instagram
+      li
+        a.icon.alt(href='https://github.com/orgs/CodeOurDreams' target='_blank')
+          i.fab.fa-github
+          span.label GitHub
+      li
+        a.icon.alt(href='mailto:info@codeourdreams.org' target='_blank')
+          i.fas.fa-envelope
+          span.label Email
+          
+    ul.copyright
+      li= lang.footer.copyright
+      each link in lang.footer.links
+        li
+          a(href=link.ref target='_blank')= link.label
+      li
+        | Made with&nbsp;
+        i.fas.fa-heart
+        |&nbsp;by&nbsp;
+        a(href='https://www.seliglabs.com' target='_blank') Selig Labs
