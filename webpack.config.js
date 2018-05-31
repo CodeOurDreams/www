@@ -4,8 +4,6 @@ const AUTOPREFIXER = require('autoprefixer'),
       MODERNIZR_WEBPACK_PLUGIN = require('modernizr-webpack-plugin'),
       PATH = require('path'),
       WEBPACK = require('webpack');
-      
-const ENGLISH = require('./src/languages/english');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -26,10 +24,6 @@ module.exports = {
 	},
 	module: {
 		rules: [
-			{
-				test: /\.node$/,
-				use: 'node-loader'
-			},
       // { test: /\.ts$/, use: 'ts-loader' },
 			{
 				test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -42,7 +36,6 @@ module.exports = {
 				}
 			]},
 			{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader' },
-			{ test: /\.pug$/, loader: 'pug-loader' },
 			{
 				test: /\.(scss|css)$/,
 				use: [
@@ -80,31 +73,10 @@ module.exports = {
 							limit: 8000,
 							useRelativePath: true
 						}
-					// },
-					// {
-					// 	loader: 'image-webpack-loader',
-					// 	options: {
-					// 		mozjpeg: {
-					// 			progressive: true,
-					// 			quality: 65
-					// 		},
-					// 		optipng: {
-					// 			enabled: true,
-					// 		},
-					// 		pngquant: {
-					// 			quality: '65-90',
-					// 			speed: 1
-					// 		},
-					// 		gifsicle: {
-					// 			interlaced: false,
-					// 		},
-					// 		webp: {
-					// 			quality: 75
-					// 		}
-					// 	}
 					}
-				],
-			}
+				]
+			},
+			{ test: /\.pug$/, loader: 'pug-loader' }
 		],
 	},
 	plugins: [
@@ -126,7 +98,8 @@ module.exports = {
 			chunkFilename: '[id].[hash].css'
 		}),
 		new HTML_WEBPACK_PLUGIN({
-			english: ENGLISH,
+			language: require('./src/languages/english'),
+			utils: require('./src/javascript/pugUtils'),
 			template: './src/templates/index.pug',
 			chunks: ['index'],
 			minify: !isDevelopment && {

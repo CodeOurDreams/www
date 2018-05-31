@@ -1,6 +1,22 @@
 import './app.js';
+import fontawesome from '@fortawesome/fontawesome'
+import faUsers from '@fortawesome/fontawesome-free-solid/faUsers'
+import faCircle from '@fortawesome/fontawesome-free-regular/faCircle'
+import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
-// // Images
+// Icons
+fontawesome.library.add(faUsers);
+fontawesome.library.add(faCircle);
+fontawesome.library.add(faFacebook);
+
+// Images
+
+
+// Mission
+document.getElementById('imgMission').src		= require('../static/images/pic02.jpg');
+document.getElementById('imgValues').src		= require('../static/images/pic03.jpg');
+document.getElementById('imgGetInvolved').src	= require('../static/images/pic04.jpg');
+
 // // Second Section
 // import imgValue0 from '../static/img/first-icon.png';
 // import imgValue1 from '../static/img/second-icon.png';

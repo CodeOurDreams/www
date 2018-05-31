@@ -9,7 +9,6 @@ import skel from 'skel-framework-npm';
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 (function($) {
-	console.log(skel);
 	skel.breakpoints({
 		xlarge: '(max-width: 1680px)',
 		large: '(max-width: 1280px)',
