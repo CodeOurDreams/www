@@ -78,7 +78,7 @@ body
           .4u(class='12u$(small)')
             span.icon.alt.major(class='fas fa-' + value.icon)
           .8u(class='12u$(small)')
-            h3= value.label
+            h3.no-margins= value.label
             h6= value.description
       ul.actions
         li
@@ -97,7 +97,7 @@ body
       ul.actions
         each action in lang.getInvolved.actions
           li
-            a.button(class=(action.specialBtn ? ' special' : '') href=action.ref)= action.label
+            a.button.fix-width(class=(action.specialBtn ? ' special' : '') href=action.ref)= action.label
           br
           br
     a.goto-next.scrolly(href='#about') Next
@@ -112,15 +112,16 @@ body
         .row.uniform
           each person in lang.about.people
             section.4u(class='6u$(medium) 12u$(xsmall)')
-              span.icon.alt.major.fa-user
-              h3= person.name
-              p= person.title
-      footer.major
-        ul.actions
-          li
-            a.button(href='#') Magna sed feugiat
+              a.modalBioOpen.modalOpen(bio=person.bio)
+                img.rounded(id=person.image, height='120')
+                h3.no-margins= person.name
+                p= person.title
+      //- footer.major
+      //-   ul.actions
+      //-     li
+      //-       a.button(href='#') Magna sed feugiat
 
-  // Five
+  //- Contact
   section#contact.wrapper.style2.special.fade
     .container
       header
@@ -184,3 +185,17 @@ body
         i.fas.fa-heart
         |&nbsp;by&nbsp;
         a(href='https://www.seliglabs.com' target='_blank') Selig Labs
+
+  .modal#modalBio
+    .modal-content
+      .modal-header
+        span.close#modalBioClose &times;
+        h2.Modal= lang.modal.header
+      .modal-body
+        .row
+          .6u(class='12u$(xsmall)')
+            img.auto-size-image(id='modalBioImg', src='/src/static/images/people/selig.jpg')
+          .6u(class='12u$(xsmall)')
+            h3.no-margins#modalBioName
+            p#modalBioTitle
+            p#modalBioBio

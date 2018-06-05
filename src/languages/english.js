@@ -47,13 +47,13 @@ module.exports = {
 	},
 
 	about: {
-		title: 'About Us',
-		subtitle: ' Learn more about who we are',
+		title: 'Our Board',
+		subtitle: ' Learn more about our leaders',
 		people: [
-			{ name: 'Brianne Caplan',	title: 'Founder & President',		bio: 'Brianne is a Data Scientist and uchicago grad. She is dedicated to helping bridge the education gap through civic engagement, technology and a love for teaching.'	},
-			{ name: 'Shane Selig',		title: 'Co-Founder & Secretary',	bio: ''	},
-			{ name: 'Isa Villaseñor',	title: 'Co-Founder & Treasurer',	bio: 'Isa is a Chicago native, UChicago grad and an alumn of Chicago Scholars and Daniel Murphy Scholarship Fund. She strongly believes that education is the best tool for success and is passionate about helping youth gain access to opportunities that will put them on a path to leadership. She has mentored students from various organizations for over five years.'	},
-			{ name: 'Piper & Millie',	title: 'Chief Happiness Officers',	bio: 'Woof.'	}
+			{ name: 'Brianne Caplan',	title: 'Founder & President',		image: 'imgCaplan',		bio: 'Brianne is a Data Scientist and uchicago grad. She is dedicated to helping bridge the education gap through civic engagement, technology and a love for teaching.'	},
+			{ name: 'Shane Selig',		title: 'Co-Founder & Secretary',	image: 'imgSelig',		bio: ''	},
+			{ name: 'Isa Villaseñor',	title: 'Co-Founder & Treasurer',	image: 'imgVillasenor',	bio: 'Isa is a Chicago native, UChicago grad and an alumn of Chicago Scholars and Daniel Murphy Scholarship Fund. She strongly believes that education is the best tool for success and is passionate about helping youth gain access to opportunities that will put them on a path to leadership. She has mentored students from various organizations for over five years.'	},
+			{ name: 'Piper & Millie',	title: 'Chief Happiness Officers',	image: 'imgDogs',		bio: 'Woof.'	}
 		]
 	},
 
@@ -89,5 +89,9 @@ module.exports = {
 			{ label: 'Privacy Policy',	ref: '#footer'	},
 			{ label: 'Terms of Use',	ref: '#footer'	}
 		]
+	},
+
+	modal: {
+		header: 'Bio'
 	}
 }

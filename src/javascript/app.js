@@ -13,3 +13,4 @@ fontawesome.library.add(brands)
 // Javascript
 import './utils.js';
 import './main.js';
+import './custom.js';
