@@ -82,8 +82,9 @@ body
             h6= value.description
       ul.actions
         li
-          a.button(href='#values') Learn More
-    a.goto-next.scrolly(href='#three') Next
+          a.button(id='expansionValuesButton') Learn More
+    .content.extra-wide(canvas='container', off-canvas='expansionValues right overlay') Test
+    a.goto-next.scrolly(href='#getInvolved') Next
     
   //- Get Involved
   section#getInvolved.spotlight.style3.left
@@ -97,9 +98,10 @@ body
       ul.actions
         each action in lang.getInvolved.actions
           li
-            a.button.fix-width(class=(action.specialBtn ? ' special' : '') href=action.ref)= action.label
+            a.button.fix-width(id=action.id, class=(action.specialBtn ? ' special' : '') href=action.ref)= action.label
           br
           br
+    .content.extra-wide(canvas='container', off-canvas='expansionGetInvolved left overlay') Test
     a.goto-next.scrolly(href='#about') Next
 
   //- About

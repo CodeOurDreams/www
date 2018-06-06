@@ -1,4 +1,45 @@
 /*
+ * Slidebars
+ */
+import slidebars from './vendors/slidebars';
+
+( function ( $ ) {
+    // Initialize Slidebars
+    var slidebarsController = new slidebars();
+    slidebarsController.init();
+
+    $( '#expansionValuesButton' ).click(function ( event ) {
+        // Stop default action and bubbling
+        event.stopPropagation();
+        event.preventDefault();
+      
+        // Toggle the Slidebar with id 'id-1'
+        slidebarsController.open( 'expansionValues' );
+      } );
+
+      $( '#values' ).click(function ( event ) {     
+        // Toggle the Slidebar with id 'id-1'
+        slidebarsController.close( 'expansionValues' );
+      } );
+
+      $( '#expansionGetInvolvedLearn' ).click(function ( event ) {
+        // Stop default action and bubbling
+        event.stopPropagation();
+        event.preventDefault();
+      
+        // Toggle the Slidebar with id 'id-1'
+        slidebarsController.open( 'expansionGetInvolved' );
+      } );
+
+      $( '#getInvolved' ).click(function ( event ) {     
+        // Toggle the Slidebar with id 'id-1'
+        slidebarsController.close( 'expansionGetInvolved' );
+      } );
+    
+  } ) ( jQuery );
+
+
+/*
  * BIO MODAL
  */
 // Open Modal

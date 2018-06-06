@@ -39,10 +39,10 @@ module.exports = {
 		body: 'Code Our Dreams is only made possible by our countless volunteers who help teach, our donors who support our mission and activities, and the students who apply',
 		details: 'Each student cohort is asked the question, "What problem do you see in your community?" In the first few weeks, students address the above question and brainstorm ideas for how a mobile application could help. Students break into group and brainstorm ideas. We help them practice entrepreneurship and presentation concepts like elevator pitches and ideation. Each group presents their idea in front of the cohort. They all vote. The winning idea is now the entire cohort’s project for the remaining school year. We teach our students computer science fundamentals, UI/UX design and user testing. At the end of the year, our students have a fully functioning MVP of their idea published in the app store. At the end of the year, our students are proud to showcase their coding talents and their ability to address social issues on their own through technology. How cool is that?',
 		actions: [
-			{ label: 'Learn More',		ref: '#learn'						},
-			{ label: 'Join a Cohort',	ref: '#join',	specialBtn: true	},
-			{ label: 'Apply to Teach',	ref: '#teach',	specialBtn: true	},
-			{ label: 'Donate',			ref: '#donate',	specialBtn: true	}
+			{ label: 'Learn More',		id: 'expansionGetInvolvedLearn',	ref: '#learn'						},
+			{ label: 'Join a Cohort',										ref: '#join',	specialBtn: true	},
+			{ label: 'Apply to Teach',										ref: '#teach',	specialBtn: true	},
+			{ label: 'Donate',												ref: '#donate',	specialBtn: true	}
 		]
 	},
 
