@@ -59,13 +59,11 @@ window.onclick = function(event) {
 }
 
 function openModal(event) {
-    const parent = event.target.parentNode;
-    console.log(parent, parent.childNodes, parent.childNodes[1]);
     // Set Data
-    document.getElementById('modalBioImg').src = parent.childNodes[0].src;
-    document.getElementById('modalBioName').innerText = parent.childNodes[1].innerText;
-    document.getElementById('modalBioTitle').innerText = parent.childNodes[2].innerText;
-    document.getElementById('modalBioBio').innerText = parent.getAttribute('bio');
+    document.getElementById('modalBioImg').src = event.target.parentNode.childNodes[0].src;
+    document.getElementById('modalBioName').innerText = event.target.parentNode.childNodes[1].innerText;
+    document.getElementById('modalBioTitle').innerText = event.target.parentNode.childNodes[2].innerText;
+    document.getElementById('modalBioBio').innerText = event.target.parentNode.getAttribute('bio');
 
     // Prevent Scroll
     document.getElementsByTagName('body')[0].scroll = 'no';

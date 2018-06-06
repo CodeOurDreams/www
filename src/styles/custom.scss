@@ -94,6 +94,10 @@
     color: white;
 }
 
+.modalOpen {
+    cursor: pointer;
+}
+
 /* Add Animation */
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
