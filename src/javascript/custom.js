@@ -59,6 +59,7 @@ window.onclick = function(event) {
 }
 
 function openModal(event) {
+    console.log(event);
     // Set Data
     document.getElementById('modalBioImg').src = event.target.parentNode.childNodes[0].src;
     document.getElementById('modalBioName').innerText = event.target.parentNode.childNodes[1].innerText;
