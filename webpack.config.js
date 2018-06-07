@@ -24,7 +24,7 @@ module.exports = {
 	},
 	module: {
 		rules: [
-      // { test: /\.ts$/, use: 'ts-loader' },
+		// { test: /\.ts$/, use: 'ts-loader' },
 			{
 				test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 				use: [{

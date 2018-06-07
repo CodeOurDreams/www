@@ -54,7 +54,7 @@ body
           | #{ lang.home.subtitle1.toLowerCase() }
           br
           | &nbsp;#{ lang.home.subtitle2.toLowerCase() }
-    +arrow
+    //- +arrow
     a.goto-next.scrolly(href='#mission') Next
 
   //- Mission
@@ -197,7 +197,7 @@ body
       .modal-body
         .row
           .6u(class='12u$(xsmall)')
-            img.auto-size-image(id='modalBioImg', src='/src/static/images/people/selig.jpg')
+            img.auto-size-image(id='modalBioImg')
           .6u(class='12u$(xsmall)')
             h3.no-margins#modalBioName Name
             p#modalBioTitle Title
