@@ -114,6 +114,6 @@ module.exports = {
 	},
 
 	modalDonate: {
-		header: 'Donate'
+		header: 'Donate -- NOT ENABLED'
 	}
 }

@@ -58,7 +58,7 @@
 
 /* Modal Content */
 .modal-content {
-    color: black;
+    color: black !important;
     text-align: center;
     
     position: relative;
@@ -131,4 +131,26 @@
 // Spacing
 .no-margins {
     margin: 0;
+}
+
+.modal label {
+    color: #B8BBC2;
+}
+
+.modal input {
+    color: #32325D;
+    border: 0;
+}
+
+.modal input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #AAB7C4 !important;
+    opacity: 1; /* Firefox */
+}
+
+.modal input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #AAB7C4 !important;
+}
+
+.modal input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #AAB7C4 !important;
 }
