@@ -30,7 +30,14 @@ module.exports = {
 			{ label: 'Empowerment',				icon: 'handshake',	description: 'Our teachers are here to empower and inspire our students to create the change they want to see in their communities.'	},
 			{ label: 'Community Engagement',	icon: 'users',		description: 'Our students build applications that address the problems they see in their communities. When our students graduate, we hope to have given them the tools to continue growing and positively engaging with their communities.'	},
 			{ label: 'Curiosity',				icon: 'lightbulb',	description: 'We encourage our students to problem solve, think creatively and always have fun.'										}
-		]
+		],
+		learnMore: {
+			title: 'Why it Matters',
+			content: [
+				'The education gap is not going to close itself. Who better to do it then our students?',
+				'We believe that digital equity is critical to closing the education gap.'
+			]
+		}
 	},
 
 	getInvolved: {
@@ -38,11 +45,22 @@ module.exports = {
 		subtitle: 'Join. Teach. Donate.',
 		body: 'Code Our Dreams is only made possible by our countless volunteers who help teach, our donors who support our mission and activities, and the students who apply',
 		details: 'Each student cohort is asked the question, "What problem do you see in your community?" In the first few weeks, students address the above question and brainstorm ideas for how a mobile application could help. Students break into group and brainstorm ideas. We help them practice entrepreneurship and presentation concepts like elevator pitches and ideation. Each group presents their idea in front of the cohort. They all vote. The winning idea is now the entire cohort’s project for the remaining school year. We teach our students computer science fundamentals, UI/UX design and user testing. At the end of the year, our students have a fully functioning MVP of their idea published in the app store. At the end of the year, our students are proud to showcase their coding talents and their ability to address social issues on their own through technology. How cool is that?',
+		learnMore: {
+			title: 'Our Program',
+			content: [
+				'Each student cohort is asked the question, "What problem do you see in your community?"',
+				'In the first few weeks, students address the above question and brainstorm ideas for how a mobile application could help. Students break into group and brainstorm ideas. We help them practice entrepreneurship and presentation concepts like elevator pitches and ideation.',
+				'Each group presents their idea in front of the cohort. They all vote.',
+				'The winning idea is now the entire cohort’s project for the remaining school year. We teach our students computer science fundamentals, UI/UX design and user testing.',
+				'At the end of the year, our students have a fully functioning MVP of their idea published in the app store. At the end of the year, our students are proud to showcase their coding talents and their ability to address social issues on their own through technology.',
+				'How cool is that?'
+			]
+		},
 		actions: [
-			{ label: 'Learn More',		id: 'expansionGetInvolvedLearn',	ref: '#learn'						},
-			{ label: 'Join a Cohort',										ref: '#join',	specialBtn: true	},
-			{ label: 'Apply to Teach',										ref: '#teach',	specialBtn: true	},
-			{ label: 'Donate',												ref: '#donate',	specialBtn: true	}
+			{ label: 'Learn More',		id: 'expansionGetInvolvedLearn',																				},
+			{ label: 'Join a Cohort',										ref: 'https://shanecoryselig.typeform.com/to/Nt0NPK',	btnType: 'form'		},
+			{ label: 'Apply to Teach',										ref: 'https://shanecoryselig.typeform.com/to/pCDvDs',	btnType: 'form'		},
+			{ label: 'Donate',												ref: '#donate',											btnType: 'donate'	}
 		]
 	},
 
@@ -91,7 +109,11 @@ module.exports = {
 		]
 	},
 
-	modal: {
+	modalBio: {
 		header: 'Bio'
+	},
+
+	modalDonate: {
+		header: 'Donate'
 	}
 }

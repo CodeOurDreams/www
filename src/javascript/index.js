@@ -19,4 +19,4 @@ document.getElementById('imgGetInvolved').src	= require('../static/images/backgr
 document.getElementById('imgCaplan').src		= require('../static/images/people/caplan.jpg');
 document.getElementById('imgSelig').src		    = require('../static/images/people/selig.jpg');
 document.getElementById('imgVillasenor').src    = require('../static/images/people/villasenor.jpg');
-// document.getElementById('imgDogs').src           = require('../static/images/people/dogs.jpg');
+document.getElementById('imgDogs').src           = require('../static/images/people/dogs.jpg');

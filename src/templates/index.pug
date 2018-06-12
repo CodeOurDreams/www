@@ -82,8 +82,12 @@ body
             h6= value.description
       ul.actions
         li
-          a.button(id='expansionValuesButton') Learn More
-    .content.extra-wide(canvas='container', off-canvas='expansionValues right overlay') Test
+          a.button#expansionValuesButton Learn More
+    .content.extra-wide(canvas='container', off-canvas='expansionValues right overlay')
+      header.major
+        h2= lang.values.learnMore.title
+      each line in lang.values.learnMore.content
+        p= line
     a.goto-next.scrolly(href='#getInvolved') Next
     
   //- Get Involved
@@ -98,11 +102,22 @@ body
       ul.actions
         each action in lang.getInvolved.actions
           li
-            a.button.fix-width(id=action.id, class=(action.specialBtn ? ' special' : '') href=action.ref)= action.label
+            case action.btnType
+              when 'donate'
+                 a.button.fix-width.special.modalDonateOpen(id=action.id)= action.label
+              when 'form'
+                a.button.fix-width.special.typeform-share(id=action.id, href=action.ref, data-mode='popup', data-submit-close-delay='1')= action.label
+              default
+                a.button.fix-width(id=action.id)= action.label
           br
           br
-    .content.extra-wide(canvas='container', off-canvas='expansionGetInvolved left overlay') Test
-    a.goto-next.scrolly(href='#about') Next
+    .content.extra-wide(canvas='container', off-canvas='expansionGetInvolved left overlay')
+      header.major
+        h2= lang.getInvolved.learnMore.title
+      each line in lang.getInvolved.learnMore.content
+        p= line
+
+    a.goto-next.scrolly(href='#about')
 
   //- About
   section#about.wrapper.style1.special.fade-up
@@ -193,12 +208,30 @@ body
     .modal-content
       .modal-header
         span.close#modalBioClose &times;
-        h2.Modal= lang.modal.header
+        h2.Modal= lang.modalBio.header
       .modal-body
         .row
           .6u(class='12u$(xsmall)')
-            img.auto-size-image(id='modalBioImg')
+            img.auto-size-image#modalBioImg
           .6u(class='12u$(xsmall)')
-            h3.no-margins#modalBioName Name
-            p#modalBioTitle Title
-            p#modalBioBio Bio
+            h3.no-margins#modalBioName
+            p#modalBioTitle
+            p#modalBioBio
+
+  .modal#modalDonate
+    .modal-content
+      .modal-header
+        span.close#modalBioClose &times;
+        h2.Modal= lang.modalDonate.header
+      .modal-body
+        form#payment-form(method='post')
+          .form-row
+            label(for='card-element') Credit or debit card
+            #card-element
+              // A Stripe Element will be inserted here.
+            // Used to display form errors.
+            #card-errors(role='alert')
+          button.button.special Submit Payment
+
+
+  script(src='https://js.stripe.com/v3')
