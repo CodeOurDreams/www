@@ -1,14 +1,19 @@
 import $ from 'jquery';
 import './app.js';
-// import fontawesome from '@fortawesome/fontawesome'
-// import faUsers from '@fortawesome/fontawesome-free-solid/faUsers'
-// import faCircle from '@fortawesome/fontawesome-free-regular/faCircle'
-// import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 
-// // Icons
-// fontawesome.library.add(faUsers);
-// fontawesome.library.add(faCircle);
-// fontawesome.library.add(faFacebook);
+// import fontawesome from '@fortawesome/fontawesome';
+// fontawesome.config.searchPseudoElements = true;
+// import solid from '@fortawesome/fontawesome-free-solid';
+// import regular from '@fortawesome/fontawesome-free-regular';
+// import brands from '@fortawesome/fontawesome-free-brands';
+// fontawesome.library.add(solid, regular, brands);
+// console.log(brands);
+// import faUsers from '@fortawesome/fontawesome-free-solid/faUsers';
+// // import faCircle from '@fortawesome/fontawesome-free-regular/faCircle';
+// import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook';
+
+// Icons
+// fontawesome.library.add(faUsers, faFacebook);
 
 // Images
 // Background

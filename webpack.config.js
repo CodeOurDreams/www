@@ -25,6 +25,16 @@ module.exports = {
 	module: {
 		rules: [
 		// { test: /\.ts$/, use: 'ts-loader' },
+			// {
+			// 	test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+			// 	use: [{
+			// 		loader: 'file-loader',
+			// 		options: {
+			// 			name: '[name].[ext]',
+			// 			outputPath: 'fonts/'
+			// 		}
+			// 	}]
+			// },
 			{
 				test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 				use: [{
