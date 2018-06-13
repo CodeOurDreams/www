@@ -1548,7 +1548,7 @@
 /* Basic */
 
 	html, body {
-		background: #1C1D26;
+		background: #1c1d26;
 	}
 
 	body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -1576,7 +1576,7 @@
 		-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #FF7EA6;
+		color: #e44c65;
 		text-decoration: none;
 	}
 
@@ -2130,7 +2130,7 @@
 	}
 
 		header.major:after {
-			background: #FF7EA6;
+			background: #e44c65;
 			content: '';
 			display: inline-block;
 			height: 0.2em;
@@ -2776,7 +2776,7 @@
 		input[type="reset"].special,
 		input[type="button"].special,
 		.button.special {
-			background-color: #FF7EA6;
+			background-color: #e44c65;
 			box-shadow: none;
 			color: #ffffff !important;
 		}
@@ -3264,62 +3264,56 @@
 		z-index: 100;
 	}
 
-	#header,
-	#header a,
-	#header input {
-		color: #FF7EA6 !important;
-	}
+		#header h1 {
+			height: inherit;
+			left: 1.25em;
+			line-height: inherit;
+			margin: 0;
+			position: absolute;
+			top: 0;
+		}
 
-	#header h1 {
-		height: inherit;
-		left: 1.25em;
-		line-height: inherit;
-		margin: 0;
-		position: absolute;
-		top: 0;
-	}
+		#header nav {
+			position: absolute;
+			right: 1em;
+			top: 0;
+		}
 
-	#header nav {
-		position: absolute;
-		right: 1em;
-		top: 0;
-	}
+			#header nav ul {
+				margin: 0;
+			}
 
-	#header nav ul {
-		margin: 0;
-	}
+				#header nav ul li {
+					display: inline-block;
+					margin-left: 1em;
+				}
 
-	#header nav ul li {
-		display: inline-block;
-		margin-left: 1em;
-	}
+					#header nav ul li a, #header nav ul li span {
+						border: 0;
+						color: inherit;
+						display: inline-block;
+						height: inherit;
+						line-height: inherit;
+						outline: 0;
+					}
 
-	#header nav ul li a, #header nav ul li span {
-		border: 0;
-		color: inherit;
-		display: inline-block;
-		height: inherit;
-		line-height: inherit;
-		outline: 0;
-	}
+						#header nav ul li a.button, #header nav ul li span.button {
+							height: 2em;
+							line-height: 2em;
+							padding: 0 1.25em;
+						}
 
-	#header nav ul li a.button, #header nav ul li span.button {
-		height: 2em;
-		line-height: 2em;
-		padding: 0 1.25em;
-	}
+						#header nav ul li a:not(.button):before, #header nav ul li span:not(.button):before {
+							margin-right: 0.5em;
+						}
 
-	#header nav ul li a:not(.button):before, #header nav ul li span:not(.button):before {
-		margin-right: 0.5em;
-	}
+					#header nav ul li.active > a, #header nav ul li.active > span {
+						color: #e44c65;
+					}
 
-	#header nav ul li.active > a, #header nav ul li.active > span {
-		color: #e44c65;
-	}
-
-	#header nav ul li > ul {
-		display: none;
-	}
+					#header nav ul li > ul {
+						display: none;
+					}
 
 	body.landing #page-wrapper {
 		padding-top: 0;
