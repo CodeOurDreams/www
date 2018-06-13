@@ -1,4 +1,5 @@
 import slidebars from './vendors/slidebars';
+import $ from 'jquery';
 
 /*
  * Form
@@ -49,65 +50,63 @@ import slidebars from './vendors/slidebars';
  */
 // Bio
 // Open Modal
-var modalBioOpen = document.getElementsByClassName('modalBioOpen');
-for (var i = 0; i < modalBioOpen.length; ++i) {
-    modalBioOpen[i].onclick = openModalBio;
-}
+$( '.modalBioOpen' ).each((index, element) => {
+    $( element ).click(openModalBio);
+});
 
 // Close the Modal
-document.getElementById('modalBioClose').onclick = function(event) {
-    closeModal('modalBio')
-};
+$( '#modalBioClose' ).click(() => {
+    closeModal('#modalBio');
+});
 
 // Donate
-var modalDonateOpen = document.getElementsByClassName('modalDonateOpen');
-for (var i = 0; i < modalDonateOpen.length; ++i) {
-    modalDonateOpen[i].onclick = function() {
-        openModal('modalDonate');
-    }
-}
+$( '.modalDonateOpen' ).each((index, element) => {
+    $( element ).click(() => {
+        openModal('#modalDonate');
+    });
+});
 
 // Close the Modal
-document.getElementById('modalBioClose').onclick = function(event) {
-    closeModal('modalDonate')
-};
+$( '#modalDonateClose' ).click(() => {
+    closeModal('#modalDonate');
+});
 
 // General
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+$( window ).click( () => {
     if (event.target == modalBio) {
-        closeModal('modalBio');
+        closeModal('#modalBio');
     } else if (event.target == modalDonate) {
-        closeModal('modalDonate');
+        closeModal('#modalDonate');
     }
-}
+});
 
 function openModalBio(event) {
     // Set Data
-    document.getElementById('modalBioImg').src = event.target.parentNode.childNodes[0].src;
-    document.getElementById('modalBioName').innerText = event.target.parentNode.childNodes[1].innerText;
-    document.getElementById('modalBioTitle').innerText = event.target.parentNode.childNodes[2].innerText;
-    document.getElementById('modalBioBio').innerText = event.target.parentNode.getAttribute('bio');
+    $( '#modalBioImg' ).attr('src', $(event.target).parent().children()[0].src);
+    $( '#modalBioName' ).text($(event.target).parent().children()[1].innerText);
+    $( '#modalBioTitle' ).text($(event.target).parent().children()[2].innerText);
+    $( '#modalBioBio' ).text($(event.target).parent().attr('bio'));
     
     // Open Modal
-    openModal('modalBio');
+    openModal('#modalBio');
 }
 
 function openModal(modal) {
     // Prevent Scroll
-    document.getElementsByTagName('body')[0].scroll = 'no';
-    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+    $('body').attr('scroll', 'no');
+    $('body').css('overflow', 'hidden');
 
     // Show Modal
-    document.getElementById(modal).style.display = 'block';
+    $(modal).css('display', 'block');
 
 }
 
 function closeModal(modal) {
     // Prevent Scroll
-    document.getElementsByTagName('body')[0].scroll = 'initial';
-    document.getElementsByTagName('body')[0].style.overflow = 'initial';
+    $('body').attr('scroll', 'initial');
+    $('body').css('overflow', 'initial');
     
     // Show Modal
-    document.getElementById(modal).style.display = 'none';
+    $(modal).css('display', 'none');
 }

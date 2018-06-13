@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import './app.js';
 // import fontawesome from '@fortawesome/fontawesome'
 // import faUsers from '@fortawesome/fontawesome-free-solid/faUsers'
@@ -11,12 +12,24 @@ import './app.js';
 
 // Images
 // Background
-document.getElementById('imgMission').src		= require('../static/images/backgrounds/people.jpg');
-document.getElementById('imgValues').src		= require('../static/images/backgrounds/planning.jpg');
-document.getElementById('imgGetInvolved').src	= require('../static/images/backgrounds/team.jpg');
+setImage('#imgMission', require('../static/images/backgrounds/people.jpg'));
+setImage('#imgValues', require('../static/images/backgrounds/planning.jpg'));
+setImage('#imgGetInvolved', require('../static/images/backgrounds/team.jpg'));
 
 // People
-document.getElementById('imgCaplan').src		= require('../static/images/people/caplan.jpg');
-document.getElementById('imgSelig').src		    = require('../static/images/people/selig.jpg');
-document.getElementById('imgVillasenor').src    = require('../static/images/people/villasenor.jpg');
-document.getElementById('imgDogs').src           = require('../static/images/people/dogs.jpg');
+setImage('#imgCaplan', require('../static/images/people/caplan.jpg'));
+setImage('#imgSelig', require('../static/images/people/selig.jpg'));
+setImage('#imgVillasenor', require('../static/images/people/villasenor.jpg'));
+setImage('#imgDogs', require('../static/images/people/dogs.jpg'));
+
+function setImage(selector, path) {
+    $(selector).each(function(index, element) {
+        element.src = path;
+    });
+}
+
+// function setBGImage(selector, path) {
+//     $(selector).each(function(index, element) {
+//         $(element).css('background-image', 'url(' + path + ')');
+//     });
+// }
