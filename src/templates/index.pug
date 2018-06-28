@@ -26,7 +26,7 @@ body
       ul
         each navItem in lang.nav
           li
-            a(class=(navItem.button ? 'button' + (navItem.specialBtn ? ' special' : '') : '') href=navItem.ref)= navItem.label
+            a.scrolly(class=navItem.class href=navItem.ref)= navItem.label
         //- li
         //-   a(href='#') Layouts
         //-   ul

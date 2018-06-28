@@ -6,15 +6,15 @@ module.exports = {
 	address: '445 East Ohio Street, Apartment 2605, Chicago, IL 60611',
 	
 	nav: [
-		{ label: 'Home',		ref: '#home'											},
-		{ label: 'Mission',		ref: '#mission'											},
-		{ label: 'Values',		ref: '#values'											},
-		{ label: 'Get Involved',ref: '#getInvolved'										},
-		{ label: 'About',		ref: '#about'											},
-		{ label: 'Contact',		ref: '#contact'											},
+		{ label: 'Home',		ref: '#home'													},
+		{ label: 'Mission',		ref: '#mission'													},
+		{ label: 'Values',		ref: '#values'													},
+		{ label: 'Get Involved',ref: '#getInvolved'												},
+		{ label: 'About',		ref: '#about'													},
+		{ label: 'Contact',		ref: '#contact'													},
 
-		{ label: 'Get Involved',ref: '#getInvolved',button: true						},
-		{ label: 'Donate',		ref: '',			button: true,	specialBtn: true	}
+		{ label: 'Get Involved',ref: '#getInvolved',	class: 'button'							},
+		{ label: 'Donate',		ref: '#getInvolved',	class: 'button special modalDonateOpen'	}
 	],
 
 	home: {
@@ -86,16 +86,18 @@ module.exports = {
 		title: 'Contact Us',
 		subtitle: 'We want to hear from you!',
 		mailingList: {
-			title: 'Join Our Mailing List',
-			placeholder: 'Email',
-			button: 'Signup'
+			title:     'Join Our Mailing List',
+			firstName: 'First Name',
+			lastName:  'Last Name',
+			email:     'Email',
+			button:    'Signup'
 		},
 		message: {
-			title: 'Send Us a Message',
-			name: 'Name',
-			email: 'Email',
+			title:   'Send Us a Message',
+			name:    'Name',
+			email:   'Email',
 			message: 'Message',
-			button: 'Send Message'
+			button:  'Send Message'
 		}
 	},
 
