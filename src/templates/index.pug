@@ -5,7 +5,7 @@ doctype html
 head
   title= lang.orgName
   meta(charset='utf-8')
-  meta(name='viewport', content='width=device-width, initial-scale=1')
+  meta(name='viewport' content='width=device-width initial-scale=1')
 
   //- <!--[if lte IE 8]>
   //- <script src='assets/js/ie/html5shiv.js'></script>
@@ -74,7 +74,7 @@ body
       ul.actions
         li
           a.button#expansionValuesButton Learn More
-    .content.extra-wide(canvas='container', off-canvas='expansionValues right overlay')
+    .content.extra-wide(canvas='container' off-canvas='expansionValues right overlay')
       header.major
         h2= lang.values.learnMore.title
       each line in lang.values.learnMore.content
@@ -97,12 +97,12 @@ body
               when 'donate'
                  a.button.fix-width.special.modalDonateOpen(id=action.id)= action.label
               when 'form'
-                a.button.fix-width.special.typeform-share(id=action.id, href=action.ref, data-mode='popup', data-submit-close-delay='1')= action.label
+                a.button.fix-width.special.typeform-share(id=action.id href=action.ref data-mode='popup' data-submit-close-delay='1')= action.label
               default
                 a.button.fix-width(id=action.id)= action.label
           br
           br
-    .content.extra-wide(canvas='container', off-canvas='expansionGetInvolved left overlay')
+    .content.extra-wide(canvas='container' off-canvas='expansionGetInvolved left overlay')
       header.major
         h2= lang.getInvolved.learnMore.title
       each line in lang.getInvolved.learnMore.content
@@ -121,7 +121,7 @@ body
           each person in lang.about.people
             section.4u(class='6u$(medium) 12u$(xsmall)')
               a.modalBioOpen.modalOpen.no-border(bio=person.bio)
-                img.rounded(id=person.image, height='120')
+                img.rounded(id=person.image height='120')
                 h3.no-margins= person.name
                 p= person.title
     a.goto-next.scrolly(href='#contact') Next
@@ -137,20 +137,28 @@ body
         h2= lang.contact.title
         p= lang.contact.subtitle
       h3= lang.contact.mailingList.title
-      form.container(method='post' action='#' class='50%')
+      //- Begin MailChimp Signup Form
+      form.container(method='post' action='https://codeourdreams.us4.list-manage.com/subscribe/post?u=ba33923537f6f12d7c344941d&amp;id=d3a0b722b3' class='50%')
+        input(type='hidden' name='b_ba33923537f6f12d7c344941d_d3a0b722b3' value='')
         .row.uniform(class='50%')
+          .6u(class='12u$(xsmall)')
+            input#email(type='text' name='FNAME' placeholder= lang.contact.mailingList.firstName)
+          .6u(class='12u$(xsmall)')
+            input#email(type='text' name='LNAME' placeholder= lang.contact.mailingList.lastName)
           .8u(class='12u$(xsmall)')
-            input#email(type='email' name='email' placeholder= lang.contact.mailingList.placeholder)
+            input#email.required(type='email' name='EMAIL' placeholder= lang.contact.mailingList.email required=true)
           .4u(class='12u$(xsmall)')
             input.fit.special(type='submit' value= lang.contact.mailingList.button)
       hr
       h3= lang.contact.message.title
-      form.container(method='post' action='#' class='75%')
+      form.container(method='post' action='https://formspree.io/info@codeourdreams.org' class='75%')
+        input(type='hidden' name='_subject' value='Website Submission')
+        input(type='hidden' name='_next' value='https://www.codeourdreams.org/#contact')
         .row.uniform
           .6u(class='12u$(xsmall)')
             input#name(type='text' name='name' placeholder= lang.contact.message.name)
           .6u(class='12u$(xsmall)')
-            input#email(type='email' name='email' placeholder= lang.contact.message.email)
+            input#email(type='email' name='email' placeholder= lang.contact.message.email required=true)
           .12u
             textarea#message(name='message' rows='5' placeholder= lang.contact.message.message)
           .12u
@@ -161,8 +169,8 @@ body
     ul.icons
       each service in lang.footer.socialMedia
         li
-          a.icon.alt(href= service.ref, target='_blank')
-            i(class= service.iconType, class='fa-' + service.icon) &nbsp;
+          a.icon.alt(href= service.ref target='_blank')
+            i(class= service.iconType class='fa-' + service.icon) &nbsp;
             span.label= service.label
           
     ul.copyright
@@ -201,11 +209,11 @@ body
             .row.uniform
               .6u(class='12u$(xsmall)')
                 label Donor Information
-                  input#cardholder-name(type='text', name='cardholder-name', placeholder='Name')
-                  input#cardholder-email(type='email', name='cardholder-email', placeholder='Email')
+                  input#cardholder-name(type='text' name='cardholder-name' placeholder='Name')
+                  input#cardholder-email(type='email' name='cardholder-email' placeholder='Email')
               .6u(class='12u$(xsmall)')
                 label Credit or Debit Card Information
-                input#payment-anount(type='number' name='payment-anount', placeholder='Amount', min='1', step='any')
+                input#payment-anount(type='number' name='payment-anount' placeholder='Amount' min='1' step='any')
                 br
                 br
                 div#card-element Test
