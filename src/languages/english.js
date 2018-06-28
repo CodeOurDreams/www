@@ -18,8 +18,15 @@ module.exports = {
 	],
 
 	home: {
-		subtitle1: 'empowering students',
-		subtitle2: 'to code for good'
+		header: 'empowering students',
+		content: [
+			'to code for good',
+			'create',
+			'explore',
+			'ideate',
+			'innovate',
+			'learn'
+		]
 	},
 
 	mission: 'Code Our Dreams is dedicated to teaching students computer science, so that they may be equipped to build applications that drive positive change in our communities.',

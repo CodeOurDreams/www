@@ -54,6 +54,9 @@
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "jquery": "^3.3.1",
     "jquery.scrollex": "^0.2.1",
-    "skel-framework-npm": "^1.0.1"
+    "jquery.scrolly": "0.0.1",
+    "skel-framework-npm": "^1.0.1",
+    "slidebars": "^2.0.2",
+    "typed.js": "^2.0.8"
   }
 }

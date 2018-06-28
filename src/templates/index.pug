@@ -44,9 +44,7 @@ body
       header
         h2= utils.toTitleCase(lang.orgName)
         p
-          | #{ lang.home.subtitle1.toLowerCase() }
-          br
-          | &nbsp;#{ lang.home.subtitle2.toLowerCase() }
+          span#typedHome.newlines
     //- +arrow
     a.goto-next.scrolly(href='#mission') Next
 

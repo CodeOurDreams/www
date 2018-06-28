@@ -1,19 +1,7 @@
 import $ from 'jquery';
+import Typed from 'typed';
 import './app.js';
-
-// import fontawesome from '@fortawesome/fontawesome';
-// fontawesome.config.searchPseudoElements = true;
-// import solid from '@fortawesome/fontawesome-free-solid';
-// import regular from '@fortawesome/fontawesome-free-regular';
-// import brands from '@fortawesome/fontawesome-free-brands';
-// fontawesome.library.add(solid, regular, brands);
-// console.log(brands);
-// import faUsers from '@fortawesome/fontawesome-free-solid/faUsers';
-// // import faCircle from '@fortawesome/fontawesome-free-regular/faCircle';
-// import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook';
-
-// Icons
-// fontawesome.library.add(faUsers, faFacebook);
+import content from '../languages/english';
 
 // Images
 // Background
@@ -28,13 +16,23 @@ setImage('#imgVillasenor', require('../static/images/people/villasenor.jpg'));
 setImage('#imgDogs', require('../static/images/people/dogs.jpg'));
 
 function setImage(selector, path) {
-    $(selector).each(function(index, element) {
+    $(selector).each((index, element) => {
         element.src = path;
     });
 }
 
-// function setBGImage(selector, path) {
-//     $(selector).each(function(index, element) {
-//         $(element).css('background-image', 'url(' + path + ')');
-//     });
-// }
+// Typed.js
+let typedHomeConfig = {
+    strings: [],
+    typeSpeed: 75,
+    backSpeed: 75,
+    shuffle: true,
+    smartBackspace: true,
+    loop: true
+};
+
+$.each(content.home.content, (index, item) => {
+    typedHomeConfig.strings.push(content.home.header + '\n' + item);
+});
+
+new Typed('#typedHome', typedHomeConfig);
