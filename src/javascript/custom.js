@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import slidebars from 'slidebars';
+import slidebars from './vendors/slidebars.js';
 
 /*
  * Form

@@ -120,7 +120,7 @@ body
         .row.uniform
           each person in lang.about.people
             section.4u(class='6u$(medium) 12u$(xsmall)')
-              a.modalBioOpen.modalOpen(bio=person.bio)
+              a.modalBioOpen.modalOpen.no-border(bio=person.bio)
                 img.rounded(id=person.image, height='120')
                 h3.no-margins= person.name
                 p= person.title

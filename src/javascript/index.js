@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import Typed from 'typed';
+import Typed from 'typed.js';
 import './app.js';
 import content from '../languages/english';
 

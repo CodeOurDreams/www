@@ -1,5 +1,6 @@
-import './vendors/jquery.scrolly.js';
-import './vendors/jquery.dropotron.js';
+// import $ from 'jquery';
+import './vendors/jquery.scrolly';
+// import './vendors/jquery.dropotron.js';
 import 'jquery.scrollex';
 import skel from 'skel-framework-npm';
 
@@ -52,10 +53,10 @@ import skel from 'skel-framework-npm';
 			});
 
 		// Dropdowns.
-			$('#nav > ul').dropotron({
-				alignment: 'right',
-				hideDelay: 350
-			});
+			// $('#nav > ul').dropotron({
+			// 	alignment: 'right',
+			// 	hideDelay: 350
+			// });
 
 		// Off-Canvas Navigation.
 
@@ -216,7 +217,7 @@ import skel from 'skel-framework-npm';
 
 										// Uncomment the line below to "rewind" when this spotlight scrolls out of view.
 
-										//leave:	function(t) { $this.addClass('inactive'); },
+										leave:	function(t) { $this.addClass('inactive'); },
 
 									});
 
