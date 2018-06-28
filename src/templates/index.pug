@@ -5,16 +5,17 @@ doctype html
 head
   title= lang.orgName
   meta(charset='utf-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1')
+  meta(name='viewport' content='width=device-width initial-scale=1')
+
   //- <!--[if lte IE 8]>
-  //- <script src="assets/js/ie/html5shiv.js"></script>
+  //- <script src='assets/js/ie/html5shiv.js'></script>
   //- <![endif]-->
   //- link(rel='stylesheet' href='assets/css/main.css')
   //- <!--[if lte IE 9]>
-  //- <link rel="stylesheet" href="assets/css/ie9.css" />
+  //- <link rel='stylesheet' href='assets/css/ie9.css' />
   //- <![endif]-->
   //- <!--[if lte IE 8]>
-  //- <link rel="stylesheet" href="assets/css/ie8.css" />
+  //- <link rel='stylesheet' href='assets/css/ie8.css' />
   //- <![endif]-->
 body
   //- Header
@@ -25,7 +26,7 @@ body
       ul
         each navItem in lang.nav
           li
-            a(class=(navItem.button ? 'button' + (navItem.specialBtn ? ' special' : '') : '') href=navItem.ref)= navItem.label
+            a.scrolly(class=navItem.class href=navItem.ref)= navItem.label
         //- li
         //-   a(href='#') Layouts
         //-   ul
@@ -43,9 +44,7 @@ body
       header
         h2= utils.toTitleCase(lang.orgName)
         p
-          | #{ lang.home.subtitle1.toLowerCase() }
-          br
-          | &nbsp;#{ lang.home.subtitle2.toLowerCase() }
+          span#typedHome.newlines
     //- +arrow
     a.goto-next.scrolly(href='#mission') Next
 
@@ -68,14 +67,14 @@ body
       each value in lang.values.values
         .row
           .4u(class='12u$(small)')
-            span.icon.alt.major(class='fas fa-' + value.icon)
+            span.icon.alt.major.fas(class='fa-' + value.icon) &nbsp;
           .8u(class='12u$(small)')
             h3.no-margins= value.label
             h6= value.description
       ul.actions
         li
           a.button#expansionValuesButton Learn More
-    .content.extra-wide(canvas='container', off-canvas='expansionValues right overlay')
+    .content.extra-wide(canvas='container' off-canvas='expansionValues right overlay')
       header.major
         h2= lang.values.learnMore.title
       each line in lang.values.learnMore.content
@@ -98,12 +97,12 @@ body
               when 'donate'
                  a.button.fix-width.special.modalDonateOpen(id=action.id)= action.label
               when 'form'
-                a.button.fix-width.special.typeform-share(id=action.id, href=action.ref, data-mode='popup', data-submit-close-delay='1')= action.label
+                a.button.fix-width.special.typeform-share(id=action.id href=action.ref data-mode='popup' data-submit-close-delay='1')= action.label
               default
                 a.button.fix-width(id=action.id)= action.label
           br
           br
-    .content.extra-wide(canvas='container', off-canvas='expansionGetInvolved left overlay')
+    .content.extra-wide(canvas='container' off-canvas='expansionGetInvolved left overlay')
       header.major
         h2= lang.getInvolved.learnMore.title
       each line in lang.getInvolved.learnMore.content
@@ -121,8 +120,8 @@ body
         .row.uniform
           each person in lang.about.people
             section.4u(class='6u$(medium) 12u$(xsmall)')
-              a.modalBioOpen.modalOpen(bio=person.bio)
-                img.rounded(id=person.image, height='120')
+              a.modalBioOpen.modalOpen.no-border(bio=person.bio)
+                img.rounded(id=person.image height='120')
                 h3.no-margins= person.name
                 p= person.title
     a.goto-next.scrolly(href='#contact') Next
@@ -138,20 +137,28 @@ body
         h2= lang.contact.title
         p= lang.contact.subtitle
       h3= lang.contact.mailingList.title
-      form.container(method='post' action='#' class='50%')
+      //- Begin MailChimp Signup Form
+      form.container(method='post' action='https://codeourdreams.us4.list-manage.com/subscribe/post?u=ba33923537f6f12d7c344941d&amp;id=d3a0b722b3' class='50%')
+        input(type='hidden' name='b_ba33923537f6f12d7c344941d_d3a0b722b3' value='')
         .row.uniform(class='50%')
+          .6u(class='12u$(xsmall)')
+            input#email(type='text' name='FNAME' placeholder= lang.contact.mailingList.firstName)
+          .6u(class='12u$(xsmall)')
+            input#email(type='text' name='LNAME' placeholder= lang.contact.mailingList.lastName)
           .8u(class='12u$(xsmall)')
-            input#email(type='email' name='email' placeholder= lang.contact.mailingList.placeholder)
+            input#email.required(type='email' name='EMAIL' placeholder= lang.contact.mailingList.email required=true)
           .4u(class='12u$(xsmall)')
             input.fit.special(type='submit' value= lang.contact.mailingList.button)
       hr
       h3= lang.contact.message.title
-      form.container(method='post' action='#' class='75%')
+      form.container(method='post' action='https://formspree.io/info@codeourdreams.org' class='75%')
+        input(type='hidden' name='_subject' value='Website Submission')
+        input(type='hidden' name='_next' value='https://www.codeourdreams.org/#contact')
         .row.uniform
           .6u(class='12u$(xsmall)')
             input#name(type='text' name='name' placeholder= lang.contact.message.name)
           .6u(class='12u$(xsmall)')
-            input#email(type='email' name='email' placeholder= lang.contact.message.email)
+            input#email(type='email' name='email' placeholder= lang.contact.message.email required=true)
           .12u
             textarea#message(name='message' rows='5' placeholder= lang.contact.message.message)
           .12u
@@ -160,30 +167,11 @@ body
   //- Footer
   footer#footer
     ul.icons
-      li
-        a.icon.alt(href='https://twitter.com/CodeOurDreams' target='_blank')
-          i.fab.fa-twitter
-          span.label Twitter
-      li
-        a.icon.alt(href='https://www.facebook.com/CodeOurDreams' target='_blank')
-          i.fab.fa-facebook
-          span.label Facebook
-      li
-        a.icon.alt(href='https://www.linkedin.com/company/codeourdreams' target='_blank')
-          i.fab.fa-linkedin
-          span.label LinkedIn
-      li
-        a.icon.alt(href='https://www.instagram.com/CodeOurDreams/' target='_blank')
-          i.fab.fa-instagram
-          span.label Instagram
-      li
-        a.icon.alt(href='https://github.com/orgs/CodeOurDreams' target='_blank')
-          i.fab.fa-github
-          span.label GitHub
-      li
-        a.icon.alt(href='mailto:info@codeourdreams.org' target='_blank')
-          i.fas.fa-envelope
-          span.label Email
+      each service in lang.footer.socialMedia
+        li
+          a.icon.alt(href= service.ref target='_blank')
+            i(class= service.iconType class='fa-' + service.icon) &nbsp;
+            span.label= service.label
           
     ul.copyright
       li= lang.footer.copyright
@@ -192,7 +180,7 @@ body
           a(href=link.ref target='_blank')= link.label
       li
         | Made with&nbsp;
-        i.fas.fa-heart
+        i.fas.fa-heart &nbsp;
         |&nbsp;by&nbsp;
         a(href='https://www.seliglabs.com' target='_blank') Selig Labs
 
@@ -221,11 +209,11 @@ body
             .row.uniform
               .6u(class='12u$(xsmall)')
                 label Donor Information
-                  input#cardholder-name(type='text', name='cardholder-name', placeholder='Name')
-                  input#cardholder-email(type='email', name='cardholder-email', placeholder='Email')
+                  input#cardholder-name(type='text' name='cardholder-name' placeholder='Name')
+                  input#cardholder-email(type='email' name='cardholder-email' placeholder='Email')
               .6u(class='12u$(xsmall)')
                 label Credit or Debit Card Information
-                input#payment-anount(type='number' name='payment-anount', placeholder='Amount', min='1', step='any')
+                input#payment-anount(type='number' name='payment-anount' placeholder='Amount' min='1' step='any')
                 br
                 br
                 div#card-element Test
