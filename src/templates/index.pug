@@ -5,16 +5,17 @@ doctype html
 head
   title= lang.orgName
   meta(charset='utf-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+
   //- <!--[if lte IE 8]>
-  //- <script src="assets/js/ie/html5shiv.js"></script>
+  //- <script src='assets/js/ie/html5shiv.js'></script>
   //- <![endif]-->
   //- link(rel='stylesheet' href='assets/css/main.css')
   //- <!--[if lte IE 9]>
-  //- <link rel="stylesheet" href="assets/css/ie9.css" />
+  //- <link rel='stylesheet' href='assets/css/ie9.css' />
   //- <![endif]-->
   //- <!--[if lte IE 8]>
-  //- <link rel="stylesheet" href="assets/css/ie8.css" />
+  //- <link rel='stylesheet' href='assets/css/ie8.css' />
   //- <![endif]-->
 body
   //- Header
@@ -68,7 +69,7 @@ body
       each value in lang.values.values
         .row
           .4u(class='12u$(small)')
-            span.icon.alt.major(class='fas fa-' + value.icon)
+            span.icon.alt.major.fas(class='fa-' + value.icon) &nbsp;
           .8u(class='12u$(small)')
             h3.no-margins= value.label
             h6= value.description
@@ -160,30 +161,11 @@ body
   //- Footer
   footer#footer
     ul.icons
-      li
-        a.icon.alt(href='https://twitter.com/CodeOurDreams' target='_blank')
-          i.fab.fa-twitter
-          span.label Twitter
-      li
-        a.icon.alt(href='https://www.facebook.com/CodeOurDreams' target='_blank')
-          i.fab.fa-facebook
-          span.label Facebook
-      li
-        a.icon.alt(href='https://www.linkedin.com/company/codeourdreams' target='_blank')
-          i.fab.fa-linkedin
-          span.label LinkedIn
-      li
-        a.icon.alt(href='https://www.instagram.com/CodeOurDreams/' target='_blank')
-          i.fab.fa-instagram
-          span.label Instagram
-      li
-        a.icon.alt(href='https://github.com/orgs/CodeOurDreams' target='_blank')
-          i.fab.fa-github
-          span.label GitHub
-      li
-        a.icon.alt(href='mailto:info@codeourdreams.org' target='_blank')
-          i.fas.fa-envelope
-          span.label Email
+      each service in lang.footer.socialMedia
+        li
+          a.icon.alt(href= service.ref, target='_blank')
+            i(class= service.iconType, class='fa-' + service.icon) &nbsp;
+            span.label= service.label
           
     ul.copyright
       li= lang.footer.copyright
@@ -192,7 +174,7 @@ body
           a(href=link.ref target='_blank')= link.label
       li
         | Made with&nbsp;
-        i.fas.fa-heart
+        i.fas.fa-heart &nbsp;
         |&nbsp;by&nbsp;
         a(href='https://www.seliglabs.com' target='_blank') Selig Labs
 

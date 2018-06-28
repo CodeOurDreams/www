@@ -94,18 +94,18 @@ module.exports = {
 
 	footer: {
 		socialMedia: [
-			{ label: 'Twitter',		icon: 'twitter',	iconType: 'b',	ref: 'https://twitter.com/CodeOurDreams'				},
-			{ label: 'Facebook',	icon: 'facebook',	iconType: 'b',	ref: 'https://www.facebook.com/CodeOurDreams'			},
-			{ label: 'LinkedIn',	icon: 'linkedin',	iconType: 'b',	ref: 'https://www.linkedin.com/company/codeourdreams'	},
-			{ label: 'Instagram',	icon: 'instagram',	iconType: 'b',	ref: 'https://www.instagram.com/CodeOurDreams'			},
-			{ label: 'GitHub',		icon: 'gitgub',		iconType: 'b',	ref: 'https://github.com/orgs/CodeOurDreams'			},
-			{ label: 'Email',		icon: 'envelope',	iconType: 's',	ref: 'mailto:info@codeourdreams.org'					}
+			{ label: 'Twitter',		icon: 'twitter',	iconType: 'fab',	ref: 'https://twitter.com/CodeOurDreams'				},
+			{ label: 'Facebook',	icon: 'facebook',	iconType: 'fab',	ref: 'https://www.facebook.com/CodeOurDreams'			},
+			{ label: 'LinkedIn',	icon: 'linkedin',	iconType: 'fab',	ref: 'https://www.linkedin.com/company/codeourdreams'	},
+			{ label: 'Instagram',	icon: 'instagram',	iconType: 'fab',	ref: 'https://www.instagram.com/CodeOurDreams'			},
+			{ label: 'GitHub',		icon: 'github',		iconType: 'fab',	ref: 'https://github.com/orgs/CodeOurDreams'			},
+			{ label: 'Email',		icon: 'envelope',	iconType: 'fas',	ref: 'mailto:info@codeourdreams.org'					}
 		],
 
 		copyright: 'Copyright © 2018 Code Our Dreams. All Rights Reserved.',
 		links: [
-			{ label: 'Privacy Policy',	ref: '#footer'	},
-			{ label: 'Terms of Use',	ref: '#footer'	}
+			// { label: 'Privacy Policy',	ref: '#footer'	},
+			// { label: 'Terms of Use',	ref: '#footer'	}
 		]
 	},
 
