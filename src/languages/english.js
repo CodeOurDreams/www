@@ -21,11 +21,11 @@ module.exports = {
 		header: 'empowering students',
 		content: [
 			'to code for good',
-			'create',
-			'explore',
-			'ideate',
-			'innovate',
-			'learn'
+			'to create',
+			'to explore',
+			'to ideate',
+			'to innovate',
+			'to learn'
 		]
 	},
 

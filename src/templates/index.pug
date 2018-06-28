@@ -5,7 +5,7 @@ doctype html
 head
   title= lang.orgName
   meta(charset='utf-8')
-  meta(name='viewport' content='width=device-width initial-scale=1')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
 
   //- <!--[if lte IE 8]>
   //- <script src='assets/js/ie/html5shiv.js'></script>
@@ -44,7 +44,7 @@ body
       header
         h2= utils.toTitleCase(lang.orgName)
         p
-          span#typedHome.newlines
+          span#typedHome.newlines &nbsp;
     //- +arrow
     a.goto-next.scrolly(href='#mission') Next
 
