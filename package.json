@@ -1,6 +1,6 @@
 {
-  "name": "landing",
-  "version": "1.0.0",
+  "name": "www",
+  "version": "1.1.0",
   "description": "Landing page of Code Our Dreams",
   "main": "index.js",
   "scripts": {
