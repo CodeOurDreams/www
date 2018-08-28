@@ -1,20 +1,20 @@
 module.exports = {
-    // General Information
-    orgName: 'Code Our Dreams',
-    email: 'info@codeourdreams.org',
-    phone: '(410) 790-5273‬',
-	address: '445 East Ohio Street, Apartment 2605, Chicago, IL 60611',
+  // General Information
+  orgName: 'Code Our Dreams',
+  email:   'info@codeourdreams.org',
+  phone:   '(410) 790-5273‬',
+  address: '445 East Ohio Street, Apartment 2605, Chicago, IL 60611',
 	
 	nav: [
-		{ label: 'Home',		ref: '#home'													},
-		{ label: 'Mission',		ref: '#mission'													},
-		{ label: 'Values',		ref: '#values'													},
-		{ label: 'Get Involved',ref: '#getInvolved'												},
-		{ label: 'About',		ref: '#about'													},
-		{ label: 'Contact',		ref: '#contact'													},
+		{ label: 'Home',	  	  ref: '#home'											  	                      	},
+		{ label: 'Mission',		  ref: '#mission'												                      	},
+		{ label: 'Values',		  ref: '#values'												                      	},
+		{ label: 'Get Involved',ref: '#getInvolved'										                      	},
+		{ label: 'About',		    ref: '#about'										  		                      	},
+		{ label: 'Contact',		  ref: '#contact'												                      	},
 
-		{ label: 'Get Involved',ref: '#getInvolved',	class: 'button'							},
-		{ label: 'Donate',		ref: '#getInvolved',	class: 'button special modalDonateOpen'	}
+		{ label: 'Get Involved',ref: '#getInvolved',	class: 'button'					            		},
+		{ label: 'Donate',		  ref: '#getInvolved',	class: 'button special modalDonateOpen'	}
 	],
 
 	home: {
@@ -34,9 +34,9 @@ module.exports = {
 	values: {
 		title: 'Our Values',
 		values: [
-			{ label: 'Empowerment',				icon: 'handshake',	description: 'Our teachers are here to empower and inspire our students to create the change they want to see in their communities.'	},
-			{ label: 'Community Engagement',	icon: 'users',		description: 'Our students build applications that address the problems they see in their communities. When our students graduate, we hope to have given them the tools to continue growing and positively engaging with their communities.'	},
-			{ label: 'Curiosity',				icon: 'lightbulb',	description: 'We encourage our students to problem solve, think creatively and always have fun.'										}
+			{ label: 'Empowerment',				    icon: 'handshake',	description: 'Our teachers are here to empower and inspire our students to create the change they want to see in their communities.'	                                                                                                        },
+			{ label: 'Community Engagement',	icon: 'users',		  description: 'Our students build applications that address the problems they see in their communities. When our students graduate, we hope to have given them the tools to continue growing and positively engaging with their communities.'	},
+			{ label: 'Curiosity',				      icon: 'lightbulb',	description: 'We encourage our students to problem solve, think creatively and always have fun.'									                                                                                                                          	}
 		],
 		learnMore: {
 			title: 'Why it Matters',
@@ -65,9 +65,9 @@ module.exports = {
 		},
 		actions: [
 			{ label: 'Learn More',		id: 'expansionGetInvolvedLearn',																				},
-			{ label: 'Join a Cohort',										ref: 'https://shanecoryselig.typeform.com/to/Nt0NPK',	btnType: 'form'		},
-			{ label: 'Apply to Teach',										ref: 'https://shanecoryselig.typeform.com/to/pCDvDs',	btnType: 'form'		},
-			{ label: 'Donate',												ref: '#donate',											btnType: 'donate'	}
+			{ label: 'Join a Cohort',                                   ref: 'https://shanecoryselig.typeform.com/to/Nt0NPK',	btnType: 'form'		},
+			{ label: 'Volunteer',                                       ref: 'https://shanecoryselig.typeform.com/to/pCDvDs',	btnType: 'form'		},
+			{ label: 'Donate',                                          ref: '#donate',								                  			btnType: 'donate'	}
 		]
 	},
 
@@ -75,10 +75,10 @@ module.exports = {
 		title: 'Our Board',
 		subtitle: ' Learn more about our leaders',
 		people: [
-			{ name: 'Brianne Caplan',	title: 'Founder & President',		image: 'imgCaplan',		bio: 'Brianne is a Data Scientist and uchicago grad. She is dedicated to helping bridge the education gap through civic engagement, technology and a love for teaching.'	},
-			{ name: 'Shane Selig',		title: 'Co-Founder & Secretary',	image: 'imgSelig',		bio: 'Shane is a Chicago native and graduate of Vanderbilt University with a degrees in Computer Science in Engineering and Managment. Since graduating, he has served as a consultant in the technology space, helping startups and early stage companies improve efficiency, simplify communications, and develop scalable processes. He has been actively involved with local charities in Chicago for over 16 years, and is especially passionate about operational logistics and organizations that take a hands on approach towards solving the root issues of the people they serve instead of addressing the symptoms. In addition to Code Our Dreams, Shane currently serves on the boards of Lights on the Lawn, a nonprofit which raises money through live music for local causes, and The Mary Parrish Center, a transitional housing center for survivors of domestic and sexual violence.'	},
-			{ name: 'Isa Villaseñor',	title: 'Co-Founder & Treasurer',	image: 'imgVillasenor',	bio: 'Isa is a Chicago native, UChicago grad and an alumn of Chicago Scholars and Daniel Murphy Scholarship Fund. She strongly believes that education is the best tool for success and is passionate about helping youth gain access to opportunities that will put them on a path to leadership. She has mentored students from various organizations for over five years.'	},
-			{ name: 'Piper & Millie',	title: 'Chief Happiness Officers',	image: 'imgDogs',		bio: 'Woof.'	}
+			{ name: 'Brianne Caplan',	title: 'Founder & President',		    image: 'imgCaplan',	  	bio: 'Brianne is a Data Scientist and uchicago grad. She is dedicated to helping bridge the education gap through civic engagement, technology and a love for teaching.'	},
+			{ name: 'Shane Selig',		title: 'Co-Founder & Secretary',	  image: 'imgSelig',	  	bio: 'Shane is a Chicago native and graduate of Vanderbilt University with a degrees in Computer Science in Engineering and Managment. Since graduating, he has served as a consultant in the technology space, helping startups and early stage companies improve efficiency, simplify communications, and develop scalable processes. He has been actively involved with local charities in Chicago for over 16 years, and is especially passionate about operational logistics and organizations that take a hands on approach towards solving the root issues of the people they serve instead of addressing the symptoms. In addition to Code Our Dreams, Shane currently serves on the boards of Lights on the Lawn, a nonprofit which raises money through live music for local causes, and The Mary Parrish Center, a transitional housing center for survivors of domestic and sexual violence.'	},
+			{ name: 'Isa Villaseñor',	title: 'Co-Founder & Treasurer',	  image: 'imgVillasenor',	bio: 'Isa is a Chicago native, UChicago grad and an alumn of Chicago Scholars and Daniel Murphy Scholarship Fund. She strongly believes that education is the best tool for success and is passionate about helping youth gain access to opportunities that will put them on a path to leadership. She has mentored students from various organizations for over five years.'	},
+			{ name: 'Piper & Millie',	title: 'Chief Happiness Officers',	image: 'imgDogs',	    	bio: 'Woof.'	}
 		]
 	},
 
@@ -103,12 +103,12 @@ module.exports = {
 
 	footer: {
 		socialMedia: [
-			{ label: 'Twitter',		icon: 'twitter',	iconType: 'fab',	ref: 'https://twitter.com/CodeOurDreams'				},
-			{ label: 'Facebook',	icon: 'facebook',	iconType: 'fab',	ref: 'https://www.facebook.com/CodeOurDreams'			},
+			{ label: 'Twitter',		icon: 'twitter',	iconType: 'fab',	ref: 'https://twitter.com/CodeOurDreams'			      	},
+			{ label: 'Facebook',	icon: 'facebook',	iconType: 'fab',	ref: 'https://www.facebook.com/CodeOurDreams'		    	},
 			{ label: 'LinkedIn',	icon: 'linkedin',	iconType: 'fab',	ref: 'https://www.linkedin.com/company/codeourdreams'	},
-			{ label: 'Instagram',	icon: 'instagram',	iconType: 'fab',	ref: 'https://www.instagram.com/CodeOurDreams'			},
-			{ label: 'GitHub',		icon: 'github',		iconType: 'fab',	ref: 'https://github.com/orgs/CodeOurDreams'			},
-			{ label: 'Email',		icon: 'envelope',	iconType: 'fas',	ref: 'mailto:info@codeourdreams.org'					}
+			{ label: 'Instagram',	icon: 'instagram',iconType: 'fab',	ref: 'https://www.instagram.com/CodeOurDreams'		  	},
+			{ label: 'GitHub',		icon: 'github',		iconType: 'fab',	ref: 'https://github.com/orgs/CodeOurDreams'		    	},
+			{ label: 'Email',		  icon: 'envelope',	iconType: 'fas',	ref: 'mailto:info@codeourdreams.org'				        	}
 		],
 
 		copyright: 'Copyright © 2018 Code Our Dreams. All Rights Reserved.',
