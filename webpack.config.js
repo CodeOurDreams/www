@@ -1,3 +1,4 @@
+const AUTOPREFIXER                   = require('autoprefixer'),
       COPY_WEBPACK_PLUGIN            = require('copy-webpack-plugin'),
       DASHBOARD_PLUGIN               = require('webpack-dashboard/plugin'),
       FRIENDLY_ERRORS_WEBPACK_PLUGIN = require('friendly-errors-webpack-plugin'),
