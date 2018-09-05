@@ -4,10 +4,16 @@ import './app.js';
 import content from '../languages/english';
 
 // Images
+// Header
+setImage('#imgNavLogo', require('../static/images/logos/blue.white.png'));
+
 // Background
 setImage('#imgMission', require('../static/images/backgrounds/people.jpg'));
 setImage('#imgValues', require('../static/images/backgrounds/planning.jpg'));
 setImage('#imgGetInvolved', require('../static/images/backgrounds/team.jpg'));
+
+// Home
+setImage('#imgHome', require('../static/images/logos/blue.white.png'));
 
 // People
 setImage('#imgCaplan', require('../static/images/people/caplan.jpg'));

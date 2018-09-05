@@ -21,7 +21,8 @@ body
   //- Header
   header#header
     h1#logo
-      a(href='/')= utils.toTitleCase(lang.orgName)
+      a(href='/')
+        img#imgNavLogo.img-responsive(height='60' alt='logo')
     nav#nav
       ul
         each navItem in lang.nav
@@ -42,7 +43,7 @@ body
   section#home
     .content
       header
-        h2= utils.toTitleCase(lang.orgName)
+        img#imgHome(height='80' alt='logo')
         p
           span#typedHome.newlines &nbsp;
     //- +arrow
@@ -74,7 +75,7 @@ body
       ul.actions
         li
           a.button#expansionValuesButton Learn More
-    .content.extra-wide(canvas='container' off-canvas='expansionValues right overlay')
+    .content.extra-wide(canvas='container' off-canvas='expansionValues right overlay' style="overflow-y: scroll")
       header.major
         h2= lang.values.learnMore.title
       each line in lang.values.learnMore.content

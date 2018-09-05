@@ -2129,14 +2129,18 @@
 		text-align: center;
 	}
 
-		header.major:after {
-			background: #e44c65;
-			content: '';
-			display: inline-block;
-			height: 0.2em;
-			max-width: 20em;
-			width: 75%;
-		}
+  header.major:after {
+    background: #e44c65;
+    content: '';
+    display: inline-block;
+    height: 0.2em;
+    max-width: 20em;
+    width: 75%;
+  }
+
+  header img {
+    padding: 5px 0;
+  }
 
 	footer.major {
 		margin: 4em 0 0 0;
@@ -2964,7 +2968,8 @@
 			background: rgba(23, 24, 32, 0.95);
 			border-style: solid;
 			opacity: 1;
-			position: absolute;
+      position: absolute;
+      overflow-y: scroll;
 		}
 
 		.spotlight .goto-next {
@@ -3481,8 +3486,7 @@
 				font-size: 11.5pt;
 			}
 
-		/* Spotlight */
-
+    /* Spotlight */
 			.spotlight.top .content {
 				padding: 3.825em 0 1.825em 0;
 			}
