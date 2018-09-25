@@ -3319,7 +3319,13 @@
 					#header nav ul li > ul {
 						display: none;
 					}
-
+  @media screen and (max-width: 1280px) {
+    #logo,
+    #titleBar .title {
+      visibility: hidden;
+    }
+  }
+      
 	body.landing #page-wrapper {
 		padding-top: 0;
 	}
@@ -3406,11 +3412,27 @@
 					display: block;
 					width: 100%;
 				}
+  
+  @media screen and (min-width: 1280px) {
+    #home .content img {
+      height: 100px;
+    }
 
+    #home .content p span {
+      font-size: 50px;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    #home .content img {
+      height: 50px;
+    }
+  }
+      
 	body.is-touch #home {
 		background-attachment: scroll;
-	}
-
+  }
+  
 /* Footer */
 
 	#footer {
@@ -3692,9 +3714,9 @@
 
 		/* Header */
 
-			#header {
-				display: none;
-			}
+    #header {
+      display: none;
+    }  
 
 		/* Banner */
 
@@ -3780,19 +3802,16 @@
 					border: 0;
 				}
 
-					#titleBar .toggle:before {
+          #titleBar .toggle {
 						-moz-osx-font-smoothing: grayscale;
 						-webkit-font-smoothing: antialiased;
 						font-family: FontAwesome;
 						font-style: normal;
 						font-weight: normal;
 						text-transform: none !important;
-					}
 
-					#titleBar .toggle:before {
-						background: #e44c65;
+            background: #e44c65;
 						color: rgba(255, 255, 255, 0.5);
-						content: '\f0c9';
 						display: block;
 						font-size: 18px;
 						height: 44px;
@@ -3801,8 +3820,13 @@
 						position: absolute;
 						text-align: center;
 						top: 0;
-						width: 54px;
-					}
+            width: 54px;
+          }
+          
+          #titleBar .toggle {
+            color: rgba(255, 255, 255, 0.5) !important;
+            text-decoration: none !important;
+          }
 
 			#navPanel {
 				-moz-backface-visibility: hidden;

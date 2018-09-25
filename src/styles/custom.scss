@@ -29,6 +29,21 @@
     z-index: 1;
 }
 
+/* Twitter */
+
+#twitter {
+  background-attachment: fixed;
+  background-color: #272833;
+  background-image: url('../static/images/backgrounds/twitter.jpg');
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
+#twitter * {
+  color: black;
+}
+
 // Buttons
 .fix-width {
     width: 225px;

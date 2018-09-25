@@ -63,7 +63,9 @@ import skel from 'skel-framework-npm';
 			// Title Bar.
 				$(
 					'<div id="titleBar">' +
-						'<a href="#navPanel" class="toggle"></a>' +
+            '<a href="#navPanel" class="toggle">' +
+              '<i class="fas fa-bars"></i>' +
+            '</a>' +
 						'<span class="title">' + $('#logo').html() + '</span>' +
 					'</div>'
 				)
