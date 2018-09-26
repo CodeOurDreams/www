@@ -1,3 +1,5 @@
+const utils = require('./utils');
+
 // Create a Stripe client.
 var stripe = Stripe('pk_test_6kThF7ZypxZHe4zUdqV2FJi0');
 
@@ -57,14 +59,23 @@ form.addEventListener('submit', function(event) {
 });
 
 function stripeTokenHandler(token) {
-    // Insert the token ID into the form so it gets submitted to the server
-    var form = document.getElementById('payment-form');
-    var hiddenInput = document.createElement('input');
-    hiddenInput.setAttribute('type', 'hidden');
-    hiddenInput.setAttribute('name', 'stripeToken');
-    hiddenInput.setAttribute('value', token.id);
-    form.appendChild(hiddenInput);
+  $('#payment-form button').attr('disabled','disabled');
+
+  // Insert the token ID into the form so it gets submitted to the server
+  var form = $('#payment-form');
+  var hiddenInput = document.createElement('input');
+  hiddenInput.setAttribute('type', 'hidden');
+  hiddenInput.setAttribute('name', 'stripeToken');
+  hiddenInput.setAttribute('value', token.id);
+  form.append(hiddenInput);
   
-    // Submit the form
-    form.submit();
-  }
+  // Submit the form
+  // form.submit();
+  jQuery.post(
+    'https://wt-e9a1b6dd30025a5bdfc6a37d476c72da-0.sandbox.auth0-extend.com/stripe-www',
+    form.serialize(),
+    (result, status) => {
+      utils.closeModal('#modalDonate');
+    }
+  );
+}

@@ -11,7 +11,7 @@ fontawesome.library.add(solid)
 fontawesome.library.add(brands)
 
 // Javascript
-import './utils.js';
+import './vendors/utils.js';
 import './main.js';
 import './payment.js';
 import './custom.js';

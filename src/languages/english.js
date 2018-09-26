@@ -1,7 +1,11 @@
+const VARS = {
+  email:   'info@codeourdreams.org'
+}
+
 module.exports = {
     // General Information
     orgName: 'Code Our Dreams',
-    email:   'info@codeourdreams.org',
+    email:   VARS.email,
     phone:   '(410) 790-5273‬',
 	  address:  '445 East Ohio Street, Apartment 2605, Chicago, IL 60611',
 	
@@ -117,7 +121,7 @@ module.exports = {
 			{ label: 'LinkedIn',	icon: 'linkedin',	iconType: 'fab',	ref: 'https://www.linkedin.com/company/codeourdreams'	},
 			{ label: 'Instagram',	icon: 'instagram',iconType: 'fab',	ref: 'https://www.instagram.com/CodeOurDreams'			  },
 			{ label: 'GitHub',		icon: 'github',		iconType: 'fab',	ref: 'https://github.com/orgs/CodeOurDreams'			    },
-			{ label: 'Email',		  icon: 'envelope',	iconType: 'fas',	ref: 'mailto:info@codeourdreams.org'					        }
+			{ label: 'Email',		  icon: 'envelope',	iconType: 'fas',	ref: `mailto:${ VARS.email }`					                }
 		],
 
 		copyright: 'Copyright © 2018 Code Our Dreams. All Rights Reserved.',
@@ -128,10 +132,10 @@ module.exports = {
 	},
 
 	modalBio: {
-		header: 'Bio'
+		header: 'Biography'
 	},
 
 	modalDonate: {
-		header: 'Donate -- NOT ENABLED'
+		header: 'Donate'
 	}
 }
