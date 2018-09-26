@@ -1,7 +1,8 @@
 const utils = require('./utils');
 
 // Create a Stripe client.
-var stripe = Stripe('pk_test_6kThF7ZypxZHe4zUdqV2FJi0');
+// var stripe = Stripe('pk_test_6kThF7ZypxZHe4zUdqV2FJi0');
+var stripe = Stripe('pk_live_ltHEPeY8Wy21oRAX6n1M1uaA');
 
 // Create an instance of Elements.
 var elements = stripe.elements();
