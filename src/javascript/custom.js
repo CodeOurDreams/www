@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import slidebars from './vendors/slidebars.js';
+const utils = require('./utils');
 
 /*
  * Form
@@ -56,28 +57,28 @@ $( '.modalBioOpen' ).each((index, element) => {
 
 // Close the Modal
 $( '#modalBioClose' ).click(() => {
-    closeModal('#modalBio');
+    utils.closeModal('#modalBio');
 });
 
 // Donate
 $( '.modalDonateOpen' ).each((index, element) => {
     $( element ).click(() => {
-        openModal('#modalDonate');
+        utils.openModal('#modalDonate');
     });
 });
 
 // Close the Modal
 $( '#modalDonateClose' ).click(() => {
-    closeModal('#modalDonate');
+    utils.closeModal('#modalDonate');
 });
 
 // General
 // When the user clicks anywhere outside of the modal, close it
 $( window ).click( () => {
     if (event.target == modalBio) {
-        closeModal('#modalBio');
+        utils.closeModal('#modalBio');
     } else if (event.target == modalDonate) {
-        closeModal('#modalDonate');
+        utils.closeModal('#modalDonate');
     }
 });
 
@@ -89,24 +90,5 @@ function openModalBio(event) {
     $( '#modalBioBio' ).text($(event.target).parent().attr('bio'));
     
     // Open Modal
-    openModal('#modalBio');
-}
-
-function openModal(modal) {
-    // Prevent Scroll
-    $('body').attr('scroll', 'no');
-    $('body').css('overflow', 'hidden');
-
-    // Show Modal
-    $(modal).css('display', 'block');
-
-}
-
-function closeModal(modal) {
-    // Prevent Scroll
-    $('body').attr('scroll', 'initial');
-    $('body').css('overflow', 'initial');
-    
-    // Show Modal
-    $(modal).css('display', 'none');
+    utils.openModal('#modalBio');
 }

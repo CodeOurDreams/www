@@ -221,14 +221,14 @@ body
             .row.uniform
               .6u(class='12u$(xsmall)')
                 label Donor Information
-                  input#cardholder-name(type='text' name='cardholder-name' placeholder='Name')
-                  input#cardholder-email(type='email' name='cardholder-email' placeholder='Email')
+                  input#cardholder-name(type='text' name='name' placeholder='Name')
+                  input#cardholder-email(type='email' name='email' placeholder='Email')
               .6u(class='12u$(xsmall)')
                 label Credit or Debit Card Information
-                input#payment-anount(type='number' name='payment-anount' placeholder='Amount' min='1' step='any')
+                input#payment-anount(type='number' name='amount' placeholder='Amount' min='1' step='any')
                 br
                 br
-                div#card-element Test
+                #card-element &nbsp;
                   // A Stripe Element will be inserted here.
                 // Used to display form errors.
               .row
