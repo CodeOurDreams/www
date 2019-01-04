@@ -8,8 +8,8 @@ import content from '../languages/english';
 setImage('#imgNavLogo', require('../static/images/logos/horizontal.png'));
 
 // Background
-setImage('#imgMission', require('../static/images/backgrounds/people.jpg'));
-setImage('#imgValues', require('../static/images/backgrounds/planning.jpg'));
+setImage('#imgMission', require('../static/images/backgrounds/teaching.jpg'));
+setImage('#imgProgram', require('../static/images/backgrounds/presentations.jpg'));
 setImage('#imgGetInvolved', require('../static/images/backgrounds/team.jpg'));
 
 // Home
@@ -38,7 +38,7 @@ let typedHomeConfig = {
 };
 
 $.each(content.home.content, (index, item) => {
-  typedHomeConfig.strings.push(`${content.home.header}\n${item}`);
+  typedHomeConfig.strings.push(`${content.home.header}\n to ${item}`);
 });
 
 new Typed('#typedHome', typedHomeConfig);
