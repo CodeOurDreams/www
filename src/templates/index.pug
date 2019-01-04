@@ -22,7 +22,7 @@ body
   header#header
     h1#logo
       a(href='/')
-        img#imgNavLogo.img-responsive(height='60' alt='logo')
+        img#imgNavLogo.img-responsive(height='70' alt='logo')
     nav#nav
       ul
         each navItem in lang.nav
@@ -186,7 +186,9 @@ body
             span.label= service.label
           
     ul.copyright
-      li= lang.footer.copyright
+      li
+        strong Copyright
+        |  &copy; 2018-#{ new Date().getFullYear() } #{ lang.orgName }. All Rights Reserved.
       each link in lang.footer.links
         li
           a(href=link.ref target='_blank')= link.label
@@ -234,7 +236,8 @@ body
               .row
               .12u
                 #card-errors(role='alert')
-          button.button.special Submit Payment
+          button.button.special.btn.btn-primary.btn-lg(data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing Order") Submit Payment
+
 
 
   script(src='https://js.stripe.com/v3')
