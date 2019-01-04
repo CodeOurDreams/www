@@ -15,18 +15,18 @@ const utils = require('./utils');
     var slidebarsController = new slidebars();
     slidebarsController.init();
 
-    $( '#expansionValuesButton' ).click(function ( event ) {
+    $( '#expansionProgramButton' ).click(function ( event ) {
         // Stop default action and bubbling
         event.stopPropagation();
         event.preventDefault();
       
         // Toggle the Slidebar with id 'id-1'
-        slidebarsController.open( 'expansionValues' );
+        slidebarsController.open( 'expansionProgram' );
       } );
 
-      $( '#values' ).click(function ( event ) {     
+      $( '#program' ).click(function ( event ) {     
         // Toggle the Slidebar with id 'id-1'
-        slidebarsController.close( 'expansionValues' );
+        slidebarsController.close( 'expansionProgram' );
       } );
 
       $( '#expansionGetInvolvedLearn' ).click(function ( event ) {

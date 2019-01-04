@@ -22,7 +22,7 @@ body
   header#header
     h1#logo
       a(href='/')
-        img#imgNavLogo.img-responsive(height='60' alt='logo')
+        img#imgNavLogo.img-responsive(height='70' alt='logo')
     nav#nav
       ul
         each navItem in lang.nav
@@ -56,29 +56,29 @@ body
     .content
       .container
         h2= lang.mission
-    a.goto-next.scrolly(href='#values') Next
+    a.goto-next.scrolly(href='#program') Next
 
-  //- Values
-  section#values.spotlight.style2.right
+  //- Program
+  section#program.spotlight.style2.right
     span.image.fit.main
-      img#imgValues(alt='')
+      img#imgProgram(alt='')
     .content
       header
-        h2= utils.toTitleCase(lang.values.title)
-      each value in lang.values.values
+        h2= utils.toTitleCase(lang.program.title)
+      each program in lang.program.program
         .row
           .4u(class='12u$(small)')
-            span.icon.alt.major.fas(class='fa-' + value.icon) &nbsp;
+            span.icon.alt.major(class= (program.iconType ? program.iconType : 'fas'), class='fa-' + program.icon) &nbsp;
           .8u(class='12u$(small)')
-            h3.no-margins= value.label
-            h6= value.description
+            h3.no-margins= program.label
+            h6= program.description
       ul.actions
         li
-          a.button#expansionValuesButton Learn More
-    .content.extra-wide(canvas='container' off-canvas='expansionValues right overlay' style="overflow-y: scroll")
+          a.button#expansionProgramButton Learn More
+    .content.extra-wide(canvas='container' off-canvas='expansionProgram right overlay' style="overflow-y: scroll")
       header.major
-        h2= lang.values.learnMore.title
-      each line in lang.values.learnMore.content
+        h2= lang.program.learnMore.title
+      each line in lang.program.learnMore.content
         p= line
     a.goto-next.scrolly(href='#getInvolved') Next
     
@@ -186,7 +186,9 @@ body
             span.label= service.label
           
     ul.copyright
-      li= lang.footer.copyright
+      li
+        strong Copyright
+        |  &copy; 2018-#{ new Date().getFullYear() } #{ lang.orgName }. All Rights Reserved.
       each link in lang.footer.links
         li
           a(href=link.ref target='_blank')= link.label
@@ -234,7 +236,8 @@ body
               .row
               .12u
                 #card-errors(role='alert')
-          button.button.special Submit Payment
+          button.button.special.btn.btn-primary.btn-lg(data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing Order") Submit Payment
+
 
 
   script(src='https://js.stripe.com/v3')
